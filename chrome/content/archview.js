@@ -120,6 +120,9 @@ function onLoad()
         var info=ds.getArchive(document.location);
         observer.observe(info, AV_TOPIC, "end:");
     }
+
+    var file = /[^\/]*$/.test(document.location) && RegExp.lastMatch || document.location;
+    document.title = file + " - " + document.title;
 }
 
 function onUnload()
