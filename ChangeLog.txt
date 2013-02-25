@@ -1,0 +1,46 @@
+ChangeLog:
+
+0.7.1
+    New: Translate to German.
+    New: Translate to Dutch.
+    Fix: Doesn't work on Linux.
+
+0.7.0
+    New: Support ISO CD Image.
+    New: Improve toolbar appearance.
+    New: Update user manual.
+    Fix: Always ask user to save to disk.
+    Fix: Decodeing bug.
+    Fix: "Extra data" while open .zip file.
+    Fix: Wrong localized last modified time in HTML mode.
+    Fix: Can't open ZIP files with long comment.
+    Fix: Conflict with Delicious Bookmarks.
+
+0.6.2
+    New: Translate to Spanish.
+    New: Translate to Russian.
+    New: Support FF 3.0.x
+    New: Can exclude files by extension name.
+    Fix: Extra garbage data while view file content.
+    Fix: Settings dialog has no button on Mac OS X.
+
+0.6.1
+    New: Translate to Portuguese.
+    New: Export catalog to local file.
+    New: User manual
+    New: Support FF 3.0 beta 4
+    Fix: Directories and zero-sized files should not have hyperlink in HTML interface.
+
+0.6.0
+    New: View the content of an individual file.
+
+0.5.90
+    New: Rewrite the fragment channel. (User invisible)
+    preliminary
+
+0.5.5
+    New: Auto-register MIME types.
+    Fix: Can't list all files in RAR archive.
+
+0.5.4
+    New: Clean up code.

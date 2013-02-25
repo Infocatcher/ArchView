@@ -1,0 +1,73 @@
+#include "nsISupports.idl"
+
+interface nsIChannel;
+interface nsIOutputStream;
+interface nsIStreamListener;
+interface nsIStringEnumerator;
+
+[scriptable, uuid(C58A9036-C4C2-4E6B-9FA8-9E32D3A4AA14)]
+interface avIArchviewInfo : nsISupports
+{
+    attribute wstring location;
+    attribute string referer;
+    attribute unsigned long long filesize;
+    attribute unsigned long long modified;
+    attribute wstring comment;
+    attribute boolean solidarch;
+    attribute unsigned long filecount;
+    attribute unsigned long sizecount;
+    attribute unsigned long errorcode;
+};
+
+[scriptable, uuid(C87CA07B-60F8-4AFF-9873-42AD12F9CBF2)]
+interface avIArchviewEntry : nsISupports
+{
+    attribute wstring filename;
+    attribute unsigned long long filesize;
+    attribute unsigned long long modified;
+    attribute unsigned long attrib;
+    attribute unsigned long checksum;
+    attribute wstring comment;
+    attribute unsigned long method;
+    attribute unsigned long position;
+    attribute unsigned long packsize;
+    attribute unsigned long headsize;
+    attribute string extra;
+    attribute boolean directory;
+    attribute boolean encrypted;
+    attribute unsigned long ostype;
+};
+
+[scriptable, uuid(F07481C8-446C-40CB-B10D-F3BB9D2CC066)]
+interface avIArchviewLister : nsISupports
+{
+    void init(in nsIStreamListener output, in avIArchviewInfo info);
+};
+
+[scriptable, uuid(3EBEBCDE-23D8-4D08-B4CE-0BE770B69693)]
+interface avIArchviewInterface : nsISupports
+{
+    nsIChannel init(in nsIOutputStream output);
+};
+
+[scriptable, uuid(8D6A8CFD-CB90-4154-B201-536849010ED5)]
+interface avIArchviewChannel : nsISupports
+{
+    void init(in nsIChannel channel, in long long offset, in long length);
+};
+
+[scriptable, uuid(861A4ABC-4861-4A96-9222-3C7F9667473D)]
+interface avIArchviewSource : nsISupports
+{
+    void addArchive(in string uri, in avIArchviewInfo info);
+    avIArchviewInfo getArchive(in string uri);
+    boolean hasArchive(in string uri);
+    nsIStringEnumerator getEnumerator(in string uri);
+    void removeArchive(in string uri);
+    void addEntry(in string uri, in avIArchviewEntry entry);
+    avIArchviewEntry getEntry(in string uri, in wstring file);
+    void removeEntry(in string uri, in wstring file);
+    void buildFolderView(in string uri, in wstring dir);
+    void buildFlatView(in string uri);
+    void buildTreeView(in string uri);
+};

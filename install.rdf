@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+ <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+ 
+   <Description about="urn:mozilla:install-manifest">
+   
+     <em:id>{0AC54906-5413-4C81-B446-07929BC39C25}</em:id>
+     <em:name>ArchView</em:name>
+     <em:version>0.7.1</em:version>
+     <em:description>View archive file online!</em:description>
+     <em:creator>Solar Flare</em:creator>
+     <!-- optional items -->
+     <em:contributor>Thinkernel</em:contributor>
+     <em:contributor>Alberto E. Kuniyoshi</em:contributor>
+     <em:contributor>Rodney Rodríguez López</em:contributor>
+     <em:contributor>Anatoly Techtonik</em:contributor>
+     <em:contributor>Tobias Markus</em:contributor>
+     <em:contributor>Neglacio Cron</em:contributor>
+    
+     <em:homepageURL>http://archview.sourceforge.net/</em:homepageURL>
+     <em:optionsURL>chrome://archview/content/settings.xul</em:optionsURL>
+     <em:aboutURL>chrome://archview/content/about.xul</em:aboutURL>
+     <em:iconURL>chrome://archview/skin/icons/archview.ico</em:iconURL>
+     
+     <!-- Firefox -->
+     <em:targetApplication>
+       <Description>
+         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+         <em:minVersion>2.0</em:minVersion>
+         <em:maxVersion>3.0.*</em:maxVersion>
+       </Description>
+     </em:targetApplication>
+ 
+   </Description>
+ 
+ </RDF>
+

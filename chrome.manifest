@@ -1,0 +1,13 @@
+content archview             jar:chrome/archview.jar!/content/
+skin    archview classic/1.0 jar:chrome/archview.jar!/skin/
+locale  archview de-DE       jar:chrome/archview.jar!/locale/de-DE/
+locale  archview en-US       jar:chrome/archview.jar!/locale/en-US/
+locale  archview es-ES       jar:chrome/archview.jar!/locale/es-ES/
+locale  archview ja-JP       jar:chrome/archview.jar!/locale/ja-JP/
+locale  archview nl-NL       jar:chrome/archview.jar!/locale/nl-NL/
+locale  archview pt-BR       jar:chrome/archview.jar!/locale/pt-BR/
+locale  archview ru-RU       jar:chrome/archview.jar!/locale/ru-RU/
+locale  archview zh-CN       jar:chrome/archview.jar!/locale/zh-CN/
+
+overlay chrome://browser/content/browser.xul chrome://archview/content/overlay.xul
+#style chrome://global/content/customizeToolbar.xul chrome://archview/skin/overlay.css
