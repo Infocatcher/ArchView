@@ -171,6 +171,9 @@ const AV_KEY_FILECOUNT=NS_RDFSRV.GetResource("@archview.ffe/rdf#filecount");
 const AV_KEY_SIZECOUNT=NS_RDFSRV.GetResource("@archview.ffe/rdf#sizecount");
 const AV_KEY_ERRORCODE=NS_RDFSRV.GetResource("@archview.ffe/rdf#errorcode");
 
+var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+    .getService(Components.interfaces.nsIXULAppInfo);
+var fixCharset = parseFloat(appInfo.platformVersion) >= 2;
 
 
 function convertDosDateTime(time)
@@ -1529,9 +1532,17 @@ ArchviewHTML.prototype=
         this.uri=new RegExp(":\/\/[^@]*@"); // trim the user:pass pair
         this.uri=info.location.replace(this.uri, "://");
 
+        var charset = "UTF-8";
+        if (!this.conv) try {
+            var pref = CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch);
+            charset = pref.getCharPref(AV_PREF_CHARSET);
+        }
+        catch(e) {
+            Components.utils.reportError(e);
+        }
         var buf="<html>\n<head>\n"+
             "<title>"+this.uri+"</title>\n"+
-            "<meta http-equiv='Content-Type' content='text/html; charset=UTF-"+(this.conv?8:16)+"'>\n"+
+            "<meta http-equiv='Content-Type' content='text/html; charset="+charset+"'>\n"+
             "</head>\n<body>\n<h1>"+this.uri+"</h1>\n<table cellpadding='2'>\n<tr>"+
             "<td width='400'><b>Name</b></td>"+
             "<td width='80' align='right'><b>Size</b></td>"+
@@ -1573,6 +1584,16 @@ ArchviewHTML.prototype=
 
         if (this.conv)
             buf=this.conv.ConvertFromUnicode(buf)+this.conv.Finish();
+        else if(fixCharset) try {
+            var conv = CC["@mozilla.org/intl/scriptableunicodeconverter"].
+                createInstance(CI.nsIScriptableUnicodeConverter);
+            var pref = CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch);
+            conv.charset = pref.getCharPref(AV_PREF_CHARSET);
+            buf = conv.ConvertFromUnicode(buf) + conv.Finish();
+        }
+        catch(e) {
+            Components.utils.reportError(e);
+        }
         this.output.write(buf, buf.length);
     },
     init: function(output)
