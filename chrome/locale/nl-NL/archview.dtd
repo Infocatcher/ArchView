@@ -1,0 +1,67 @@
+<!ENTITY about.title "Over ArchView">
+<!ENTITY about.license.label "Licentie">
+<!ENTITY about.credit.label "Credit">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - Bekijk Archieven Online!">
+<!ENTITY about.details.label "&about.name.label; kan archief bestanden open zonder het daadwerkelijk te downloaden, zoals een normale webpagina. Het is razendsnel omdat het maar een klein deeltje van de server moet verkrijgen. &about.name.label; ondersteunt het RAR, ZIP en ISO type; http://, ftp:// en file:// protocollen. En het kan weergeven in XUL of HTML interface.">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "Bestand">
+<!ENTITY file.open.label "Open">
+<!ENTITY file.save.label "Opslaan">
+<!ENTITY file.comment.label "Toevoeging">
+<!ENTITY file.list.label "Exporteer Lijst">
+<!ENTITY file.down.label "Sla Archief Op">
+<!ENTITY select.label "Selecteer">
+<!ENTITY select.all.label "Alles">
+<!ENTITY select.none.label "Geen">
+<!ENTITY select.invert.label "Omdraaien">
+<!ENTITY select.bytype.label "Naar Type">
+<!ENTITY view.label "Bekijk">
+<!ENTITY view.flat.label "Plat">
+<!ENTITY view.folder.label "Map">
+<!ENTITY view.tree.label "Boom">
+<!ENTITY view.explorer.label "Explorer">
+<!ENTITY sort.label "Sorteer">
+<!ENTITY sort.byname.label "Naar Naam">
+<!ENTITY sort.bysize.label "Naar Grootte">
+<!ENTITY sort.bydate.label "Naar Datum">
+<!ENTITY sort.bypath.label "Naar Pad">
+<!ENTITY sort.unsorted.label "Niet Gesorteerd">
+<!ENTITY settings.label "Instellingen">
+<!ENTITY about.label "Over">
+<!ENTITY home.label "Thuis">
+<!ENTITY help.label "Help">
+<!ENTITY debug.label "Debug">
+<!ENTITY debug.datasource.label "DataBron">
+<!ENTITY debug.category.label "Categorie">
+
+<!ENTITY toolbar.text.label "Tekst">
+<!ENTITY toolbar.icon.label "Iconen">
+<!ENTITY toolbar.full.label "Iconen en Tekst">
+<!ENTITY toolbar.hori.label "Horizontaal">
+<!ENTITY toolbar.vert.label "Verticaal">
+
+<!ENTITY column.basename.label "Naam">
+<!ENTITY column.modified.label "Gewijzigd">
+<!ENTITY column.filesize.label "Grootte">
+<!ENTITY column.packsize.label "Ingepakt">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "Attribuut">
+<!ENTITY column.dirname.label "Pad">
+
+<!ENTITY expand.label "Vergroten">
+<!ENTITY close.label "Sluiten">
+
+<!ENTITY settings.title "Instelling">
+<!ENTITY settings.formats.label "Types">
+<!ENTITY settings.protocols.label "Protocollen">
+<!ENTITY settings.interface.label "Interface">
+<!ENTITY settings.columns.label "Kolommen">
+<!ENTITY settings.charset.label "Charset">
+<!ENTITY settings.exclude.label "Uitsluiten">

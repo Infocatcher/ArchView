@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+
+<!DOCTYPE window [
+	<!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
+	%archviewDTD;
+]>
+
+<prefwindow id="avSettingsDialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&settings.title;"
+        buttons="accept,cancel" defaultButton="accept">
+
+<script type="application/x-javascript" src="chrome://archview/content/settings.js"/>
+
+<prefpane id="general" label="General">
+
+  <preferences>
+    <preference id="interface" name="extensions.archview.interface" type="string"/>
+    <preference id="view" name="extensions.archview.view" type="string"/>
+    <preference id="http" name="extensions.archview.protocol.http" type="bool" disabled="true"/>
+    <preference id="ftp" name="extensions.archview.protocol.ftp" type="bool" disabled="true"/>
+    <preference id="file" name="extensions.archview.protocol.file" type="bool" disabled="true"/>
+    <preference id="iso" name="extensions.archview.format.iso" type="bool"/>
+    <preference id="rar" name="extensions.archview.format.rar" type="bool"/>
+    <preference id="zip" name="extensions.archview.format.zip" type="bool"/>
+    <preference id="basename" name="extensions.archview.column.basename" type="bool" disabled="true"/>
+    <preference id="filesize" name="extensions.archview.column.filesize" type="bool"/>
+    <preference id="modified" name="extensions.archview.column.modified" type="bool"/>
+    <preference id="packsize" name="extensions.archview.column.packsize" type="bool"/>
+    <preference id="checksum" name="extensions.archview.column.checksum" type="bool"/>
+    <preference id="attribute" name="extensions.archview.column.attribute" type="bool"/>
+    <preference id="dirname" name="extensions.archview.column.dirname" type="bool"/>
+    <preference id="charset" name="extensions.archview.charset" type="string"/>
+    <preference id="exclude" name="extensions.archview.exclude" type="string"/>
+  </preferences>
+
+<hbox>
+<vbox>
+
+<hbox>
+  <vbox>
+    <hbox>
+      <groupbox flex="1">
+        <caption label="&settings.interface.label;"/>
+        <radiogroup id="avInterfaceGroup" preference="interface" oncommand="onInterfaceChange();" onsyncfrompreference="onInterfaceChange();">
+          <radio label="XUL" value="application/vnd.mozilla.xul+xml"/>
+          <radio label="HTML" value="text/html"/>
+        </radiogroup>
+      </groupbox>
+      <groupbox flex="1">
+        <caption label="&view.label;"/>
+        <radiogroup id="avViewGroup" preference="view">
+          <radio label="&view.flat.label;" value="flat"/>
+          <radio label="&view.tree.label;" value="tree"/>
+          <radio label="&view.folder.label;" value="folder"/>
+        </radiogroup>
+      </groupbox>
+    </hbox>
+
+    <hbox>
+      <groupbox flex="1">
+        <caption label="&settings.protocols.label;"/>
+        <checkbox label="HTTP" preference="http" disabled="true"/>
+        <checkbox label="FTP" preference="ftp" disabled="true"/>
+        <checkbox label="FILE" preference="file" disabled="true"/>
+      </groupbox>
+      <groupbox flex="1">
+        <caption label="&settings.formats.label;"/>
+        <checkbox label="ISO" preference="iso"/>
+        <checkbox label="RAR" preference="rar"/>
+        <checkbox label="ZIP" preference="zip"/>
+      </groupbox>
+    </hbox>
+  </vbox>
+
+  <groupbox>
+    <caption label="&settings.columns.label;"/>
+    <checkbox label="&column.basename.label;" preference="basename" disabled="true"/>
+    <checkbox label="&column.filesize.label;" preference="filesize"/>
+    <checkbox label="&column.modified.label;" preference="modified"/>
+    <checkbox label="&column.packsize.label;" preference="packsize"/>
+    <checkbox label="&column.checksum.label;" preference="checksum"/>
+    <checkbox label="&column.attribute.label;" preference="attribute"/>
+    <checkbox label="&column.dirname.label;" preference="dirname"/>
+  </groupbox>
+</hbox>
+
+<groupbox>
+  <caption label="&settings.exclude.label;"/>
+  <textbox preference="exclude" flex="1"/>
+</groupbox>
+
+<groupbox>
+  <caption label="&settings.charset.label;"/>
+    <menulist id="avCharsetlist" ref="NC:DecodersRoot" datasources="rdf:charset-menu" preference="charset" flex="1" onsyncfrompreference="return readDefaultCharset();">
+      <template>
+        <menupopup>
+          <menuitem label="rdf:http://home.netscape.com/NC-rdf#Name" uri="..." value="..."/>
+        </menupopup>
+      </template>
+    </menulist>
+</groupbox>
+
+</vbox>
+</hbox>
+
+</prefpane>
+</prefwindow>

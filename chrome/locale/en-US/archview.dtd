@@ -1,0 +1,67 @@
+<!ENTITY about.title "About ArchView">
+<!ENTITY about.license.label "License">
+<!ENTITY about.credit.label "Credit">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - View Archive File Online!">
+<!ENTITY about.details.label "&about.name.label; can show archive files online without download the whole archive. Just like a normal web page. It is very fast since it merely fetches a small portion of the archive file from server. &about.name.label; supports RAR, ZIP and ISO formats; http://, ftp:// and file:// protocols. And it can present XUL or HTML interface.">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "File">
+<!ENTITY file.open.label "Open">
+<!ENTITY file.save.label "Save">
+<!ENTITY file.comment.label "Comment">
+<!ENTITY file.list.label "Export List">
+<!ENTITY file.down.label "Save Archive">
+<!ENTITY select.label "Select">
+<!ENTITY select.all.label "All">
+<!ENTITY select.none.label "None">
+<!ENTITY select.invert.label "Invert">
+<!ENTITY select.bytype.label "By Type">
+<!ENTITY view.label "View">
+<!ENTITY view.flat.label "Flat">
+<!ENTITY view.folder.label "Folder">
+<!ENTITY view.tree.label "Tree">
+<!ENTITY view.explorer.label "Explorer">
+<!ENTITY sort.label "Sort">
+<!ENTITY sort.byname.label "By Name">
+<!ENTITY sort.bysize.label "By Size">
+<!ENTITY sort.bydate.label "By Date">
+<!ENTITY sort.bypath.label "By Path">
+<!ENTITY sort.unsorted.label "Unsorted">
+<!ENTITY settings.label "Settings">
+<!ENTITY about.label "About">
+<!ENTITY home.label "Home">
+<!ENTITY help.label "Help">
+<!ENTITY debug.label "Debug">
+<!ENTITY debug.datasource.label "DataSource">
+<!ENTITY debug.category.label "Category">
+
+<!ENTITY toolbar.text.label "Text">
+<!ENTITY toolbar.icon.label "Icons">
+<!ENTITY toolbar.full.label "Icons and Text">
+<!ENTITY toolbar.hori.label "Horizontal">
+<!ENTITY toolbar.vert.label "Vertical">
+
+<!ENTITY column.basename.label "Name">
+<!ENTITY column.modified.label "Modified">
+<!ENTITY column.filesize.label "Size">
+<!ENTITY column.packsize.label "Packed">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "Attribute">
+<!ENTITY column.dirname.label "Path">
+
+<!ENTITY expand.label "Expand">
+<!ENTITY close.label "Close">
+
+<!ENTITY settings.title "Settings">
+<!ENTITY settings.formats.label "Formats">
+<!ENTITY settings.protocols.label "Protocols">
+<!ENTITY settings.interface.label "Interface">
+<!ENTITY settings.columns.label "Columns">
+<!ENTITY settings.charset.label "Charset">
+<!ENTITY settings.exclude.label "Exclude">

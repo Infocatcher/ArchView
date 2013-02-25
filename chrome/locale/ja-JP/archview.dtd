@@ -1,0 +1,67 @@
+<!ENTITY about.title "ArchViewについて">
+<!ENTITY about.license.label "ライセンス">
+<!ENTITY about.credit.label "クレジット">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - Firefoxで直接アーカイブファイルの中身を見える！">
+<!ENTITY about.details.label "&about.name.label; でアーカイブファイルのダウンロードが要らなく、ウエッブページの見る方法と同じでfirefoxでアーカイブファイルの中身を見える。Webサーバより必要な情報だけを取得するので、速度が速い。&about.name.label; はRARとZIPとISO形式のアーカイブファイルをサポートし、http://とftp://とfile://の三つプロトコルをサポートしている。そして、XULとHTMLの二つ画面表示形式を選択できる。">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "ファイル">
+<!ENTITY file.open.label "開く">
+<!ENTITY file.save.label "保存">
+<!ENTITY file.comment.label "コメント">
+<!ENTITY file.list.label "輸出リスト">
+<!ENTITY file.down.label "保存アーカイブ">
+<!ENTITY select.label "選択">
+<!ENTITY select.all.label "全て選択">
+<!ENTITY select.none.label "全て取消">
+<!ENTITY select.invert.label "反転">
+<!ENTITY select.bytype.label "ファイル種類">
+<!ENTITY view.label "ビュー">
+<!ENTITY view.flat.label "フラットビュー">
+<!ENTITY view.folder.label "フォルダ">
+<!ENTITY view.tree.label "ツリービュー">
+<!ENTITY view.explorer.label "ナビゲーター">
+<!ENTITY sort.label "ソート">
+<!ENTITY sort.byname.label "名称">
+<!ENTITY sort.bysize.label "サイズ">
+<!ENTITY sort.bydate.label "日付">
+<!ENTITY sort.bypath.label "パース">
+<!ENTITY sort.unsorted.label "アンソート">
+<!ENTITY settings.label "オプション">
+<!ENTITY about.label "について">
+<!ENTITY home.label "ホーム">
+<!ENTITY help.label "ヘルプ">
+<!ENTITY debug.label "デッバグ">
+<!ENTITY debug.datasource.label "データソース">
+<!ENTITY debug.category.label "カテゴリ">
+
+<!ENTITY toolbar.text.label "テキストのみ">
+<!ENTITY toolbar.icon.label "アイコンのみ">
+<!ENTITY toolbar.full.label "アイコンとテキス">
+<!ENTITY toolbar.hori.label "水平">
+<!ENTITY toolbar.vert.label "垂直">
+
+<!ENTITY column.basename.label "名称">
+<!ENTITY column.modified.label "修正日付">
+<!ENTITY column.filesize.label "サイズ">
+<!ENTITY column.packsize.label "圧縮後サイズ">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "属性">
+<!ENTITY column.dirname.label "パース">
+
+<!ENTITY expand.label "展開">
+<!ENTITY close.label "閉じる">
+
+<!ENTITY settings.title "オプション設定">
+<!ENTITY settings.formats.label "フォーマット">
+<!ENTITY settings.protocols.label "プロトコル">
+<!ENTITY settings.interface.label "インタフェース">
+<!ENTITY settings.columns.label "列">
+<!ENTITY settings.charset.label "エンコーディング">
+<!ENTITY settings.exclude.label "除外">

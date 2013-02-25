@@ -1,0 +1,322 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <title>ArchView User Manual</title>
+</head>
+
+<body>
+
+<div align="center">
+  <h1>ArchView  User Manual</h1>
+  <strong>Version 0.7.0 (2008/6/28)</strong><br>
+  <a href="mailto:soflare@gmail.com">Solar Flare</a><br>
+</div>
+
+<h2>Table of Content</h2>
+<ol>
+  <li><a href="#intro">Introduction</a></li>
+  <ol>
+    <li><a href="#whatis">What Is ArchView</a></li>
+    <li><a href="#whatisnot">What ArchView Is Not</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+  </ol>
+  <li><a href="#settings">Settings</a></li>
+  <ol>
+    <li><a href="#dialog">Settings Dialog</a></li>
+    <li><a href="#quicksetup">Quick Setup</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#view">Directory View</a></li>
+    <li><a href="#column">Columns</a></li>
+    <li><a href="#format">File Formats</a></li>
+    <li><a href="#protocol">Network Protocols</a></li>
+    <li><a href="#exclude">Exclude</a></li>
+    <li><a href="#charset">Charset</a></li>
+  </ol>
+  <li><a href="#usage">Usage</a></li>
+  <ol>
+    <li><a href="#openar">Open Archive File</a></li>
+    <li><a href="#closear">Close Archive File</a></li>
+    <li><a href="#savear">Download Archive File</a></li>
+    <li><a href="#open">Open File</a></li>
+    <li><a href="#save">Close File</a></li>
+    <li><a href="#select">Select File</a></li>
+    <li><a href="#expand">Expand Directory</a></li>
+    <li><a href="#sort">Sort</a></li>
+    <li><a href="#export">Export</a></li>
+  </ol>
+  <li><a href="#formats">Formats</a></li>
+  <ol>
+    <li><a href="#recognition">Recognition</a></li>
+    <li><a href="#aboutzip">About ZIP</a></li>
+    <li><a href="#aboutrar">About RAR</a></li>
+    <li><a href="#aboutiso">About ISO</a></li>
+  </ol>
+  <li><a href="#error">Errors</a></li>
+  <ol>
+    <li><a href="#unknownformat">Unknown Format</a></li>
+    <li><a href="#readfailed">Read Failed</a></li>
+    <li><a href="#extradata">Extra Data</a></li>
+    <li><a href="#filecorrupted">File Corrupted</a></li>
+    <li><a href="#notresumable">Server Doesn't Support Resumption</a></li>
+    <li><a href="solidarchive">Can't Open File In Solid Archive</a></li>
+  </ol>
+  <li><a href="#feedback">Feedback</a></li>
+  <ol>
+    <li><a href="#bugreport">Bug Report</a></li>
+    <!--li><a href="#featurerequest">Feature Request</a></li-->
+  </ol>
+  <li><a href="#appendix">Appendix</a></li>
+  <ol>
+    <li><a href="#archiver">Other Archivers</a></li>
+  </ol>
+</ol>
+
+<h2><a name="intro">1 Introduction</a></h2>
+
+<h3><a name="whatis">1.1 What Is ArchView</a></h3>
+
+<p>ArchView is an extension of <a href="http://www.getfirefox.com/" target="_blank">Firefox</a> (2.0). It can open archive file online and get the catalog. It also can preview or download files in archive. Currently, it support ZIP, RAR and ISO formats. The most peculiar feature of ArchView is that it can open an individal file without download the whole archive, since it only fetch the necessary portion. So it's suitable for checking the content of archive before download. ArchView can support HTTP and FTP protocols. It can also handle local files via file: protocol.</p>
+
+<h3><a name="whatisnot">1.2 What ArchView Is Not</a></h3>
+
+<p>ArchView doesn't intend to replace <a href="#archiver">other archivers</a> (eg. <a href="http://www.7-zip.org/" target="_blank">7-Zip</a>, <a href="http://www.winzip.com/" target="_blank">WinZip</a> or <a href="http://www.rarlab.com/" target="_blank">WinRAR</a>). It lacks some features, can't add or delete files in archive. ArchView doesn't support compression, and has no plan to realize it. ArchView is a companion and supplementation of those tools, since they are designed for handle local files. Almost none of them can deal with archive files on Web or FTP server. And ArchView can work together with Firefox, that make open online archive file like normal web pages.</p>
+
+<h3><a name="features">1.3 Features</a></h3>
+
+<ul>
+  <li>Directly access archive files on Web or FTP server.</li>
+  <li>List the catalog of archive file.</li>
+  <li>Open or download an individual file.</li>
+  <li>Support RAR, ZIP and ISO formats.</li>
+  <li>Support HTTP, FTP and file: protocols.</li>
+  <li>Can present HTML or XUL interface.</li>
+  <li>Only fetch necessary data rather than the whole archive file.</li>
+  <li>Work together with Firefox, easy to use.</li>
+  <li>Platform independent, (theoretically) support all platforms that Firefox can run.</li>
+</ul>
+
+<h3><a name="limitations">1.4 Limitations</a></h3>
+
+<ul>
+  <li>Can't open SFX file.</li>
+  <li>Not support multi-volumn archive.</li>
+  <li>Not support RAR decoding, need third-party software.</li>
+  <li>Can't open encrypted file in ZIP.</li>
+  <li>Can't show RAR comment.</li>
+</ul>
+
+<h2><a name="settings">2 Settings</a></h2>
+
+<h3><a name="dialog">2.1 Settings Dialog</a></h3>
+
+<p>选择“工具”菜单的“附加软件”打开“附加软件”对话框，可以找到 ArchView 一行。点击“选项”按钮可以打开“参数设置”对话框。如果使用 XUL 界面方式并打开了一个存档文件，可以点击设置按钮弹出“参数设置”对话框</p>
+
+<h3><a name="quicksetup">2.2 Quick Setup</a></h3>
+
+<p>也可以通过 Firefox 窗口右下角的快捷设置图标进行快速设置。如果是左键单击，可以在允许和禁止两个状态间切换。如果选择了禁止，ArchView 不处理任何文件，就像没安装一样。如果是右键单击，会弹出一个菜单。通过这个菜单，可以快速选择界面方式和文件格式。下面会逐项说明。</p>
+
+<h3><a name="interface">2.3 Interface</a></h3>
+
+<p>ArchView 提供两种界面显示方式，传统的 HTML 方式和高级的 XUL 方式。它们各有优缺点。对于 HTML 方式，它只能提供简单的目录显示功能，而 XUL 方式可以选择三种不同的目录视图，还可以对列表按不同方式进行选择和排序。但 XUL 方式是在得到全部的目录数据后才显示，而 HTML 是增量显示的，也就是说一边传输一边显示。简单的说，HTML 方式比 XUL 方式显示速度快。</p>
+
+<p>选择的策略是：对于本地文件和网络上的 ZIP 和 ISO 文件，推荐使用 XUL 方式。对于网络上的 RAR 文件，特别是包含很多文件的 RAR 包，推荐使用 HTML 方式。</p>
+
+<h3><a name="view">2.4 Directory View</a></h3>
+
+<p>目录可以有三种视图方式显示，分别是：树形，平坦和文件夹。树形视图是把所有文件和目录组成一个目录/文件树显示，全部展开后可以看到所有的文件、目录和他们之间的层次关系。平坦视图则只列出所有的文件，隐藏目录项，而且也没有层次关系。平坦视图适合快速查找文件。文件夹视图则只显示一个目录的内容，显示和操作方式类似 Windows 的资源管理器。文件夹视图适合文件数量很大的存档文件，而且只专注某个目录。安装后默认是树型视图。可以在“参数设置”对话框更改默认视图。</p>
+
+<h3><a name="column">2.5 Columns</a></h3>
+
+<p>设置默认显示的栏目。改变这个选项确定后，当前的显示也会变化，以后每次打开文件都会是同样的栏目。可以点击目录列表表头最右边的小按钮选择当前显示的栏目，这个设置不会影响下次的显示。</p>
+
+<p>目前这个设置只影响 XUL 界面的栏目显示。HTML 界面显示的栏目是固定的。以后的版本可能会增加这个功能。</p>
+
+<h3><a name="format">2.6 File Formats</a></h3>
+
+<p>可以选择允许 ArchView 打开的存档文件格式。目前可以分别选择 ZIP，RAR 和 ISO 三种格式。如果没有选择，打开相关的链接会显示下载对话框。</p>
+
+<p>需要说明的是，由于 RAR 格式本身的问题，打开 RAR 存档文件会比 ZIP 速度慢。特别是对于包含很多文件的 RAR 文件尤为明显。不建议使用 ArchView 打开 FTP 服务器上的 RAR 文件。详细信息请参考：<a href="#formats">格式</a>。</p>
+
+<h3><a name="protocol">2.7 Network Protocols</a></h3>
+
+<p>安装后 ArchView 可以支持通过 http（包括https），ftp 和 file 协议打开存档文件。目前还不能分别选择支持协议，以后的版本可能会增加这个功能。</p>
+
+<h3><a name="exclude">2.8 Exclude</a></h3>
+
+<p>ZIP 文件由于其格式和编码的开放性而被广泛应用于一些特定的应用程序，例如 Firefox 扩展的安装文件 .xpi 其实就是一个 ZIP 存档文件。为了避免 ArchView 打开这类文件，可以将它的扩展名设置在排除类型里。当遇到此类文件时，Firefox 将使用默认方式打开。多个扩展名以 ; 分割。默认已经设置了 .xpi 和 .jar 文件。</p>
+
+<h3><a name="charset">2.9 Charset</a></h3>
+
+<p>当存档文件包含非英语的文件名时，需要设置字符集才能正确显示文件名。错误的设置会导致文件名显示不正确，甚至会使 ArchView 无法列出目录。默认设置是与 Firefox 的默认字符集是相同的。例如，简体中文版会设置为 GB2312。</p>
+
+<h2><a name="usage">3 Usage</a></h2>
+
+<h3><a name="openar">3.1 Open Archive File</a></h3>
+
+<p>直接在 Firefox 浏览器点击存档文件的链接就可以打开了。当然也可以在位置栏里直接输入文件的地址。对于本地文件，可以将文件从资源管理器里拖拽到浏览器的窗口中，或者通过 file 协议方式访问。总之，这么样打开 HTML 页面，就可以用同样的方法打开存档文件。</p>
+
+<p>在打开时，状态栏的会显示当前的进度。对于 RAR 和 ISO 文件，文件的数量只有在全部得到后才能知道，所以进度不可预测，但会显示目前已经获得的文件数量。</p>
+
+<p>完成后，会在状态栏显示出文件数量和所有文件（压缩前）大小的总和。另外也会显示操作结果，一般是“成功”。如果显示“多余数据”，可以忽略。详细信息请参考：<a href="#error">错误</a>。</p>
+
+<h3><a name="closear">3.2 Close Archive File</a></h3>
+
+<p>很简单，关闭窗口或者标签页，相关资源会自动释放。</p>
+
+<h3><a name="savear">3.3 Download Archive File</a></h3>
+
+<p>如果不想打开 ArchView 预览文件内容而是想直接下载，可以在链接上单击右键并选择“链接另存为”。或者按住 Alt 键并单击左键可以直接保存。如果已经用 ArchView 打开了文件，可以按“保存”按钮将整个文件下载到本地，效果跟“链接另存为”是一样的。</p>
+
+<h3><a name="open">3.4 Open File</a></h3>
+
+<p>在目录列表里双击指定文件即可，按回车键也可以，或者右键单击选择“打开”。</p>
+
+<p>对于 ZIP 和 ISO 文件，如果选择打开的文件是图片、HTML 文档或其他文本文件，会直接显示在 Firefox 的一个新窗口或标签页里。如果是 Firefox 不能处理的文件，会弹出“正在打开”的对话框提示用户选择外部应用程序打开或下载到本地。</p>
+
+<p>对于 RAR 文件，由于没有实现 RAR 的解码算法，不能直接在浏览器里预览文件，而总是会弹出“正在打开”对话框。如果系统中已经安装了支持 RAR 格式的存档管理软件（如 <a href="http://www.rarlab.com/" target="_blank">WinRAR</a> 或 <a href="http://www.7-zip.org/" target="_blank">7-Zip</a>），可以先用它打开一个临时文件，然后再打开里面的内容。这个临时文件也是一个 RAR 格式的文件，不过只包含指定的某个文件。</p>
+
+<h3><a name="save">3.5 Download File</a></h3>
+
+<p>在目录列表里单击右键选择“保存”。这时往往会弹出“正在打开”对话框选择外部应用程序打开或下载。如果不想看到这个对话框而是想直接下载。可以在浏览器的地址栏输入：about:config，然后找到“browser.helperApps.neverAsk.saveToDisk”一行，将它设置成“application/always-save-archview”。</p>
+
+<h3><a name="select">3.6 Select File</a></h3>
+
+<p>可以同时选择多个文件打开或保存，按住 Ctrl 键再单击鼠标左键就可以选择多个文件。为了方便，在选择按钮菜单里提供了反向选择和按类型选择。所谓反向选择就是把已经选中的文件取消而选择其他文件。按类型选择就是选择与当前文件扩展名相同的所有文件。</p>
+
+<p>另外，选择文件的同时，状态栏中的“选定”也会相应变化，显示已选择文件的数量和大小的总和。</p>
+
+<p><font color="#ff0000">警告：请谨慎同时打开或下载太多的文件，建议不要超过三个。</font></p>
+
+<h3><a name="expand">3.7 Expand Directory</a></h3>
+
+<p>当显示树形视图时，在目录项单击右键可以看到“展开”。此功能可以把这个目录包括其下所有的子目录全部展开。可以同时选择多个目录一起展开。对于其他视图，没有这个功能。</p>
+
+<h3><a name="sort">3.8 Sort</a></h3>
+
+<p>可以按不同的列对当前显示的文件/目录进行排序，便于查找文件。可以通过点击“排序”按钮选择不同方式进行排序。也可以直接点击栏目的台头进行排序。每次点击排序方式可以在三种方式间循环切换：顺序，逆序和不排序。默认是不排序。</p>
+
+<h3><a name="export">3.9 Export</a></h3>
+
+<p>将存档文件的目录导出到本地文件，导出文件的格式为 HTML。其中的超级连接可以直接点击以浏览或下载其中的某个文件。可以导出全部文件的目录，也可以只导出选择部分的目录。</p>
+
+<h2><a name="formats">4. Formats</a></h2>
+
+<h3><a name="recognition">4.1 Recognition</a></h3>
+
+<p>对于 http 协议，判定一个文件是哪种存档文件格式是通过检查文件头部的部分数据获得的。这种识别方式不依赖于文件的扩展名，只要是符合相关格式的标准 ArchView 都能够正确的识别。但是对于 ftp 和 file 协议方式，是依赖扩展名的。</p>
+
+<h3><a name="aboutzip">4.2 About ZIP</a></h3>
+
+<p>某些带有很长（大于 4KB）注释的 ZIP 文件可能无法打开。可以通过高级设置来解决这个问题。打开 about:config 配置页面。找到“extensions.archview.zip.retries”一行，将这个值改大一些。这个值控制查找 ZIP 标识区的重试次数。另外还有一个配置项是“extensions.archview.fragsize”，这个控制每次与服务器连接请求的最小数据量。只要这两个值的乘积大于注释的长度就可以打开文件。但是不建议修改第二个参数。另外，这个乘积大于 65535 是没有意义的，因为 ZIP 文件允许的最大注释长度是 64KB。</p>
+
+<p>另外，对于一些带有特别扩展的 ZIP 文件 ArchView 可能也无法打开。请参考：<a href="#bugreport">Bug 报告</a>。</p>
+
+<h3><a name="aboutrar">4.3 About RAR</a></h3>
+
+<p>RAR 文件打开速度慢是因为 RAR 文件格式中不提供目录区。所以无法一次性得到全部的目录数据，而是需要读取其中每个文件的文件头。当文件头和压缩数据的和大于“extensions.archview.fragsize”时，每得到一个文件的信息需要同服务器通信一次。对于 HTTP 协议通信一次建立一个 TCP 连接，而对于 FTP 协议需要建立两个连接：控制连接和数据连接。所以处理 FTP 服务器上的 RAR 文件速度尤为慢。如果网络带宽比较好，可以将“extensions.archview.fragsize”的值调大一些以改善性能。对于本地文件，这个值不起作用。访问本地文件的性能差异很小，完全可以忽略。</p>
+
+<p>有些 RAR 存档文件中的文件无法打开和下载，ArchView 报告“无法打开 Solid Archive 中的文件”的错误。对于这样存档文件，请把整个文件下载到本地，然后使用本地应用程序打开。请参考：<a href="#solidarchive">无法打开 Solid Archive 中的文件</a></p>
+
+<p>RAR 文件格式是私有的，并且不适合网络处理。RAR 的编码算法也是私有的，目前没有开源和免费的软件实现。所以，不建议使用 RAR 存档文件格式，特别是在网络上。</p>
+
+<h3><a name="aboutiso">4.4 关于 ISO 格式</a></h3>
+
+<p>所谓 ISO 格式指的是 ISO-9660 光盘镜像格式，这种格式通常用于数据光盘。ArchView 同时还支持 Joliet 和 Rock Ridge 扩展。这两种扩展主要用来解决标准 ISO-9660 格式关于文件名等方面的限制。Joliet 常用于 Windows 平台制作的 CD，而 Rock Ridge 则常用于 Unix 平台制作的 CD。有时一张 CD 可以同时包含两种扩展。这种情况 ArchView 会选择 Joliet 扩展。</p>
+
+<h2><a name="error">5. Errors</a></h2>
+
+<h3><a name="unknownformat">5.1 Unknown Format</a></h3>
+
+<p>The file format can't be recognized. This commonly caused by bad file header. For ZIP format, an uncommon reseaon is that the comment block is too long. Please refer <a href="#aboutzip">About ZIP</a>。</p>
+
+<P>Additionally, this error may be occured when server can't support continual transmission properly. Please submit a <a href="#bugreport">bug report</a> when the archive can be opened locally and the server does support continual transmission.</p>
+
+<h3><a name="readfailed">5.2 Read Failed</a></h3>
+
+<p>Some problems occured during transmission, these probablly caused by operating system or network connection. If this error can be reproduced, please submit a <a href="#bugreport">bug report</a>.</p>
+
+<h3><a name="extradata">5.3 Extra Data</a></h3>
+
+<p>This is a debug information for developers rather an error. User should ignore this prompt. The archive should have been show successfully.</p>
+
+<h3><a name="filecorrupted">5.4 File Corrupted</a></h3>
+
+<p>File format had been recognized, but format violation with regard to specification was found. If this file can be opened with thrid-party applications, please submit a <a href="#bugreport">bug report</a>.</p>
+
+<h3><a name="notresumable">5.5 Server Doesn't Support Resumption</a></h3>
+
+<p>For local files, this error should not occur. It will be casued by the HTTP or FTP server which doesn't support continual transmission. Another potential case is that the file was changed during transmission.</p>
+
+<p>For HTTP protocol, two reasons can cause this error. One is the server only supports HTTP version 1.0, another is the status code that server responsed is 200 rather than 206. Please refer <a href="http://www.faqs.org/rfcs/rfc2616.html" target="_blank">RFC 2616</a> section 14.35.2.</p>
+
+<p>For FTP protocol, this error caused by the server doesn't support REST command. Please refer <a href="http://www.faqs.org/rfcs/rfc959.html" target="_blank">RFC 959</a> section 4.1.3. Non-standard response for MDTM command may also cause this error, but it's unfrequent. Please refer <a href="http://www.faqs.org/rfcs/rfc3659.html" target="_blank">RFC 3659</a> chapter 3.</p>
+
+<h3><a name="solidarchive">5.6 Can't Open File In Solid Archive</a></h3>
+
+<p>This error caused by the RAR archvie file was compressed use the "<a href="http://en.wikipedia.org/wiki/Solid_compression" target="_blank">Solid Compression</a>". That mean all files in archive were concatenated before compressed. This method can get a little bit high compression rate, especially for many small files which have similar content. But a wealness of this method is that it's can't get an individual file without uncompress the whole archive. So it's slower when modify solid archive. And commonly all files will be lost when the archive is corrupted.</p>
+
+<p>For these sort of RAR archive files, you have to download them and open with third-party applications.</p>
+
+<h2><a name="feedback">6 Feedback</a></h2>
+
+<h3><a name="bugreport">6.1 Bug Report</a></h3>
+
+<p>If you encounter problems, especially can't open some archive files, you can submit a bug report. Certainly, any sort of bug report and suggestions are also welcome. You can sumbit bug reports or feature requests on the <a href="http://sourceforge.net/tracker/?group_id=196620" target="_blank">tracker page</a> of archview sourceforge project. But bugs or feature requests probability can't be solved in a short term or maybe never solved. I don't charge any fee for this software, and also don't provide any warranty. I will greatly appreciate if you can submit patches.</p>
+
+<p>To easily locate and fix bugs, please provide some information when you report. These include:<br>
+<ul>
+    <li>The URL of the archive file that ArchView doesn't handle well.</li>
+    <li>Verion and language of Firefox.</li>
+    <li>Operating system and the version.</li>
+    <li>Other extensions that you have installed.</li>
+    <li>Error message appear in "Console" (In Tool menu).</li>
+    <li>Can be reproduced?</li>
+    <li>Any other descriptions.</li>
+</ul>
+</p>
+
+<!--h3><a name="featurerequest">6.2 Feature Request</a></h3-->
+
+<h2><a name="appendix">7 Appendix</a></h2>
+
+<h3><a name="archiver">7.1 Other Archivers</a>(GUI)</h3>
+
+<h4>OpenSource/Free Software</h4>
+
+<ul>
+  <li><a href="http://www.7-zip.org/">7-Zip</a> (Windows)</li>
+  <li><a href="http://www.kde.org/">Ark</a> (Linux)</li>
+  <li><a href="http://fileroller.sourceforge.net/">File Roller</a> (Linux)</li>
+  <li><a href="http://peazip.sourceforge.net/">PeaZip</a> (Windows, Linux)</li>
+  <li><a href="http://squeeze.xfce.org/">Squeeze</a> (Linux)</li>
+  <li><a href="http://wakaba.c3.cx/s/apps/unarchiver.html">Unarchiver</a> (Mac OS X)</li>
+  <li><a href="http://xarchiver.xfce.org/">Xarchiver</a> (Linux)</li>
+</ul>
+
+<h4>Freeware</h4>
+
+<ul>
+  <li><a href="http://www.altools.net/">ALZip</a> (Windows, free for personal use only)</li>
+  <li><a href="http://www.filzip.com/">FilZip</a> (Windows)</li>
+  <li><a href="http://www.izarc.org/">IZArc</a> (Windows)</li>
+  <li><a href="http://www.tugzip.com/">TUGZip</a> (Windows)</li>
+  <li><a href="http://www.zipgenius.it/">ZipGenius</a> (Windows)</li>
+  <li><a href="http://www.zipeg.com/">Zipeg</a> (Mac OS X, Windows)</li>
+</ul>
+
+<h4>Shareware</h4>
+
+<ul>
+  <li><a href="http://www.powerarchiver.com/">PowerArchiver</a> (Windows)</li>
+  <li><a href="http://www.pkware.com/">PKZIP</a> (Windows)</li>
+  <li><a href="http://www.speedproject.de/enu/squeez/">Squeez</a> (Windows)</li>
+  <li><a href="http://www.stuffit.com/">StuffIt</a> (Mac OS X, Windows)</li>
+  <li><a href="http://www.winace.com/">WinAce</a> (Windows)</li>
+  <li><a href="http://www.rarlab.com/">WinRAR</a> (Windows)</li>
+  <li><a href="http://www.winzip.com/">WinZip</a> (Windows)</li>
+</ul>
+
+</body>
+</html>

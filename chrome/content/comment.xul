@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+
+<!DOCTYPE window [
+	<!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
+	%archviewDTD;
+]>
+
+<dialog id="avCommentDialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&file.comment.label;"
+        buttons="accept" defaultButton="accept"
+        buttonlabelaccept="&close.label;"
+        ondialogaccept="return true;"
+        onload="document.getElementById('avCommentText').value=window.arguments[0];focus();">
+
+<textbox id="avCommentText" flex="1" multiline="true" readonly="true"/>
+</dialog>

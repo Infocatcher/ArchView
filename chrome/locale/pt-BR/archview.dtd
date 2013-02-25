@@ -1,0 +1,67 @@
+<!ENTITY about.title "Sobre ArchView">
+<!ENTITY about.license.label "Licença">
+<!ENTITY about.credit.label "Crédito">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - Visualize Arquivos Compactados Online!">
+<!ENTITY about.details.label "&about.name.label; pode mostrar arquivos compactados online sem precisar baixar. Igual a uma página da web. É muito rápido porque apenas adquire uma pequena porção do arquivo compactado do servidor. &about.name.label; suporta formatos RAR, ZIP e ISO; protocolos http://, ftp:// e file://. E pode apresentar em interface XUL ou HTML.">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "Arquivo">
+<!ENTITY file.open.label "Abrir">
+<!ENTITY file.save.label "Salvar">
+<!ENTITY file.comment.label "Comentário">
+<!ENTITY file.list.label "Exportar Lista">
+<!ENTITY file.down.label "Download Arquivo">
+<!ENTITY select.label "Selecionar">
+<!ENTITY select.all.label "Tudo">
+<!ENTITY select.none.label "Nenhum">
+<!ENTITY select.invert.label "Inverter">
+<!ENTITY select.bytype.label "Por tipo">
+<!ENTITY view.label "Ver">
+<!ENTITY view.flat.label "Flat">
+<!ENTITY view.folder.label "Pasta">
+<!ENTITY view.tree.label "Árvore">
+<!ENTITY view.explorer.label "Explorer">
+<!ENTITY sort.label "Organizar">
+<!ENTITY sort.byname.label "Por nome">
+<!ENTITY sort.bysize.label "Por tamanho">
+<!ENTITY sort.bydate.label "Por data">
+<!ENTITY sort.bypath.label "Por caminho">
+<!ENTITY sort.unsorted.label "Sem organizar">
+<!ENTITY settings.label "Configurações">
+<!ENTITY about.label "Sobre">
+<!ENTITY home.label "Home">
+<!ENTITY help.label "Ajuda">
+<!ENTITY debug.label "Debug">
+<!ENTITY debug.datasource.label "Fonte de dados">
+<!ENTITY debug.category.label "Categoria">
+
+<!ENTITY column.basename.label "Nome">
+<!ENTITY column.modified.label "Modificado">
+<!ENTITY column.filesize.label "Tamanho">
+<!ENTITY column.packsize.label "Pacote">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "Atributo">
+<!ENTITY column.dirname.label "Caminho">
+
+<!ENTITY toolbar.text.label "Texto">
+<!ENTITY toolbar.icon.label "Ícones">
+<!ENTITY toolbar.full.label "Ícones e Texto">
+<!ENTITY toolbar.hori.label "Horizontal">
+<!ENTITY toolbar.vert.label "Vertical">
+
+<!ENTITY expand.label "Expandir">
+<!ENTITY close.label "Fechar">
+
+<!ENTITY settings.title "Configurações">
+<!ENTITY settings.formats.label "Formatos">
+<!ENTITY settings.protocols.label "Protocolos">
+<!ENTITY settings.interface.label "Interface">
+<!ENTITY settings.columns.label "Colunas">
+<!ENTITY settings.charset.label "Codificação">
+<!ENTITY settings.exclude.label "Excluir">

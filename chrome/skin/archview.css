@@ -1,0 +1,30 @@
+
+toolbarbutton
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-user-focus: normal;
+}
+
+.size-column
+{
+    text-align: right;
+}
+
+treecol, treechildren::-moz-tree-cell-text {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+treechildren::-moz-tree-image(file) {
+    list-style-image: url("icons/file0.ico");
+}
+treechildren::-moz-tree-image(file,encrypted) {
+    list-style-image: url("icons/file1.ico");
+}
+treechildren::-moz-tree-image(folder) {
+    list-style-image: url("icons/folder0.ico");
+}
+treechildren::-moz-tree-image(folder,encrypted) {
+    list-style-image: url("icons/folder1.ico");
+}

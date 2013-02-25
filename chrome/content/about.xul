@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+
+<!DOCTYPE window [
+	<!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
+	%archviewDTD;
+]>
+
+<dialog id="avAboutDialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&about.title;" width="500" height="400"
+        buttons="extra1,accept" defaultButton="accept"
+        buttonlabelaccept="&close.label;" buttonlabelextra1="&home.label;"
+        ondialogaccept="return true;"
+        ondialogextra1="gohome('&about.home.label;');close();">
+
+<script type="application/x-javascript">
+const CC=Components.classes;
+const CI=Components.interfaces;
+
+function mailto(email)
+{
+    var srv=CC["@mozilla.org/uriloader/external-protocol-service;1"].
+                getService(CI.nsIExternalProtocolService);
+    if (!srv.externalProtocolHandlerExists("mailto")) return false;
+
+    var addr=CC["@mozilla.org/network/simple-uri;1"].createInstance(CI.nsIURI);
+    addr.spec="mailto:"+email;
+    srv.loadUrl(addr);
+    return true;
+}
+function gohome(url)
+{
+    var watcher=CC["@mozilla.org/embedcomp/window-watcher;1"].getService(CI.nsIWindowWatcher);
+    //var topwin=watcher.getWindowByName("what's the name?", null);
+    var mediator=CC["@mozilla.org/appshell/window-mediator;1"].getService(CI.nsIWindowMediator);
+    var topwin=mediator.getMostRecentWindow("navigator:browser");
+    if (!topwin)
+    {
+        var arg=CC["@mozilla.org/supports-string;1"].createInstance(CI.nsISupportsString);
+        arg.data=url;
+        topwin=watcher.openWindow(null, "chrome://browser/content/", null, null, arg);
+        return;
+    }
+
+    var browser=topwin.document.getElementById("content");
+    browser.loadOneTab(url, null, null, null, false, false);
+}
+</script>
+
+<tabbox flex="1">
+  <tabs>
+    <tab label="&about.label;"/>
+    <tab label="&about.license.label;"/>
+    <tab label="&about.credit.label;"/>
+  </tabs>
+  <tabpanels flex="1">
+    <tabpanel id="about">
+      <vbox flex="1">
+        <spacer height="8"/>
+        <hbox>
+          <image src="chrome://archview/skin/icons/archview.ico"/>
+          <spacer width="15"/>
+          <vbox flex="1">
+            <spacer flex="1"/>
+            <description value="&about.name.label; &about.version.label;" style="font-weight: bold;"/>
+            <spacer flex="1"/>
+          </vbox>
+        </hbox>
+        <spacer height="10"/>
+        <description value="&about.banner.label;"/>
+        <spacer height="15"/>
+        <textbox multiline="true" readonly="true" class="plain" value="&about.details.label;" flex="1"/>
+        <spacer height="15"/>
+        <description value="&about.copyright.label;"/>
+        <hbox>
+          <description value="&about.email.label;" style="cursor: pointer; color: blue;" onclick="mailto('&about.email.label;');"/>
+          <spacer flex="1"/>
+        </hbox>
+        <spacer height="8"/>
+      </vbox>
+    </tabpanel>
+    <tabpanel id="license">
+      <iframe src="chrome://archview/locale/license.html" flex="1"/>
+    </tabpanel>
+    <tabpanel id="credit">
+      <iframe src="chrome://archview/locale/credit.html" flex="1"/>
+    </tabpanel>
+  </tabpanels>
+</tabbox>
+
+</dialog>

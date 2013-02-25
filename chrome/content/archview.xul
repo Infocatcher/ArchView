@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://archview/skin/archview.css" type="text/css"?>
+
+<!--!DOCTYPE overlay SYSTEM "chrome://archview/locale/archview.dtd">
+	<!ENTITY % brandDTD SYSTEM "chrome://archview/locale/brand.dtd">
+	%brandDTD;-->
+<!DOCTYPE window [
+	<!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
+	%archviewDTD;
+]>
+
+<window id="avMainWindow"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&main.title;"
+        onload="onLoad();" onunload="onUnload();">
+
+<script type="application/x-javascript" src="chrome://global/content/contentAreaUtils.js"/>
+<script type="application/x-javascript" src="chrome://archview/content/archview.js"/>
+
+<stringbundleset id="avStringSet">
+  <stringbundle id="avString" src="chrome://archview/locale/archview.properties"/>
+</stringbundleset>
+
+<toolbar id="avToolBar" contextmenu="avToolbarPopup">
+  <toolbarbutton id="avFileBtn" label="&file.label;" text="&file.label;" image="chrome://archview/skin/icons/file.ico" type="menu">
+    <menupopup>
+      <menuitem id="avOpenItem" label="&file.open.label;" oncommand="onOpen(false);"/>
+      <menuitem id="avSaveItem" label="&file.save.label;" oncommand="onOpen(true);"/>
+      <!--menuitem id="avInfoItem" label="&file.info.label;" oncommand="onInfo(true);"/-->
+      <menuseparator/>
+      <menuitem id="avCommentItem" label="&file.comment.label;" oncommand="onComment();"/>
+      <!--menuitem id="avExpandItem" label="&file.expand.label;" oncommand="onExpand();"/-->
+      <menuitem id="avListItem" label="&file.list.label;" oncommand="onList(false);"/>
+      <menuitem id="avDownItem" label="&file.down.label;" oncommand="onDown();"/>
+    </menupopup>
+  </toolbarbutton>
+  <toolbarbutton id="avSelectBtn" label="&select.label;" text="&select.label;" image="chrome://archview/skin/icons/select.ico" type="menu">
+    <menupopup>
+      <menuitem id="avAllItem" label="&select.all.label;" oncommand="onSelect('all');"/>
+      <menuitem id="avNoneItem" label="&select.none.label;" oncommand="onSelect('none');"/>
+      <menuitem id="avInvertItem" label="&select.invert.label;" oncommand="onSelect('invert');"/>
+      <menuitem id="avByTypeItem" label="&select.bytype.label;" oncommand="onSelect('bytype');"/>
+    </menupopup>
+  </toolbarbutton>
+  <toolbarbutton id="avViewBtn" label="&view.label;" text="&view.label;" image="chrome://archview/skin/icons/view.ico" type="menu">
+    <menupopup>
+      <menuitem id="avFlatItem" label="&view.flat.label;" type="radio" oncommand="onView('flat');" checked="true"/>
+      <menuitem id="avFolderItem" label="&view.folder.label;" type="radio" oncommand="onView('folder');"/>
+      <menuitem id="avTreeItem" label="&view.tree.label;" type="radio" oncommand="onView('tree');"/>
+      <!--menuitem id="avExplorerItem" label="&view.explorer.label;" type="radio" oncommand="onView('explorer');"/-->
+    </menupopup>
+  </toolbarbutton>
+  <toolbarbutton id="avSortBtn" label="&sort.label;" text="&sort.label;" image="chrome://archview/skin/icons/sort.ico" type="menu">
+    <menupopup>
+      <menuitem id="avByBasenameItem" label="&sort.byname.label;" type="radio" oncommand="onSort(event);"/>
+      <menuitem id="avByFilesizeItem" label="&sort.bysize.label;" type="radio" oncommand="onSort(event);"/>
+      <menuitem id="avByModifiedItem" label="&sort.bydate.label;" type="radio" oncommand="onSort(event);"/>
+      <menuitem id="avByDirnameItem" label="&sort.bypath.label;" type="radio" oncommand="onSort(event);"/>
+      <menuitem id="avUnsortItem" label="&sort.unsorted.label;" type="radio" oncommand="onSort(event);" checked="true"/>
+    </menupopup>
+  </toolbarbutton>
+  <toolbarbutton id="avSettingsBtn" label="&settings.label;" text="&settings.label;" image="chrome://archview/skin/icons/settings.ico" oncommand="onSettings();"/>
+  <spacer flex="1"/>
+  <toolbarbutton id="avHelpBtn" label="&help.label;" text="&help.label;" image="chrome://archview/skin/icons/help.ico" oncommand="onHelp();"/>
+  <toolbarbutton id="avAboutBtn" label="&about.label;" text="&about.label;" image="chrome://archview/skin/icons/about.ico" oncommand="onAbout();"/>
+  <toolbarbutton id="avHomeBtn" label="&home.label;" text="&home.label;" image="chrome://archview/skin/icons/home.ico" oncommand="onHome();" hidden="true"/>
+  <toolbarbutton id="avDebugBtn" label="&debug.label;" text="&debug.label;" image="chrome://archview/skin/icons/debug.ico" type="menu" hidden="true">
+    <menupopup>
+      <menuitem id="avDataSourceItem" label="&debug.datasource.label;" oncommand="dumpDataSource();"/>
+      <menuitem id="avCategoryItem" label="&debug.category.label;" oncommand="dumpCategory();"/>
+    </menupopup>
+  </toolbarbutton>
+</toolbar>
+
+<popup id="avToolbarPopup">
+    <menuitem id="avToolbarTextItem" label="&toolbar.text.label;" type="radio" name="mode" oncommand="onToolbarChange('text');"/>
+    <menuitem id="avToolbarIconItem" label="&toolbar.icon.label;" type="radio" name="mode" oncommand="onToolbarChange('icon');"/>
+    <menuitem id="avToolbarFullItem" label="&toolbar.full.label;" type="radio" name="mode" oncommand="onToolbarChange('full');"/>
+    <menuseparator/>
+    <menuitem id="avToolbarHoriItem" label="&toolbar.hori.label;" type="radio" name="orient" oncommand="onToolbarChange('-');"/>
+    <menuitem id="avToolbarVertItem" label="&toolbar.vert.label;" type="radio" name="orient" oncommand="onToolbarChange('|');"/>
+    <!--menuseparator/>
+    <menuitem id="avToolbarLargeItem" label="&toolbar.large.label;" type="radio" name="size" oncommand="onToolbarChange(event);"/>
+    <menuitem id="avToolbarSmallItem" label="&toolbar.small.label;" type="radio" name="size" oncommand="onToolbarChange(event);"/-->
+</popup>
+
+<popup id="avTreePopup" onpopupshowing="return onShowTreePopup(event);">
+    <menuitem id="avTreeOpenItem" label="&file.open.label;" oncommand="onOpen(false);"/>
+    <menuitem id="avTreeSaveItem" label="&file.save.label;" oncommand="onOpen(true);"/>
+    <menuitem id="avTreeExpandItem" label="&expand.label;" oncommand="onExpand();"/>
+</popup>
+
+<tree id="avContentTree" enableColumnDrag="true" contextmenu="avTreePopup" datasources="rdf:null" ref="" flags="dont-build-content" flex="1" ondblclick="onTreeDblClick(event);" onkeypress="onTreeKeyPress(event);" onselect="onTreeSelect();">
+  <treecols onclick="onTreeColClick(event);">
+    <treecol id="avBasenameCol" label="&column.basename.label;" flex="2" sort="rdf:@archview.ffe/rdf#basename" persist="width ordinal" primary="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avFilesizeCol" label="&column.filesize.label;" flex="1" sort="rdf:@archview.ffe/rdf#filesize" persist="width ordinal" class="size-column"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avModifiedCol" label="&column.modified.label;" flex="1" sort="rdf:@archview.ffe/rdf#modified" persist="width ordinal"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avPacksizeCol" label="&column.packsize.label;" flex="1" sort="rdf:@archview.ffe/rdf#packsize" persist="width ordinal" class="size-column"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avChecksumCol" label="&column.checksum.label;" flex="1" sort="rdf:@archview.ffe/rdf#checksum" persist="width ordinal"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avAttributeCol" label="&column.attribute.label;" flex="1" sort="rdf:@archview.ffe/rdf#attribute" persist="width ordinal"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="avDirnameCol" label="&column.dirname.label;" flex="2" sort="rdf:@archview.ffe/rdf#dirname" persist="width ordinal"/>
+    <splitter class="tree-splitter"/>
+  </treecols>
+
+  <template>
+    <rule>
+      <treechildren alternatingbackground="true">
+        <treeitem uri="rdf:*">
+          <treerow>
+            <treecell label="rdf:@archview.ffe/rdf#basename" properties="rdf:@archview.ffe/rdf#filetype"/>
+            <treecell label="rdf:@archview.ffe/rdf#filesize"/>
+            <treecell label="rdf:@archview.ffe/rdf#modified"/>
+            <treecell label="rdf:@archview.ffe/rdf#packsize"/>
+            <treecell label="rdf:@archview.ffe/rdf#checksum"/>
+            <treecell label="rdf:@archview.ffe/rdf#attribute"/>
+            <treecell label="rdf:@archview.ffe/rdf#dirname"/>
+          </treerow>
+        </treeitem>
+      </treechildren>
+    </rule>
+  </template>
+  <!--template>
+    <rule>
+      <conditions>
+        <content uri="?start"/>
+        <member container="?start" child="?node"/>
+        <triple subject="?node" predicate="@archview.ffe/rdf#basename" object="?basename"/>
+      </conditions>
+      <bindings>
+        <binding subject="?node" predicate="@archview.ffe/rdf#modified" object="?modified"/>
+        <binding subject="?node" predicate="@archview.ffe/rdf#filesize" object="?filesize"/>
+        <binding subject="?node" predicate="@archview.ffe/rdf#packsize" object="?packsize"/>
+        <binding subject="?node" predicate="@archview.ffe/rdf#checksum" object="?checksum"/>
+        <binding subject="?node" predicate="@archview.ffe/rdf#attribute" object="?attribute"/>
+        <binding subject="?node" predicate="@archview.ffe/rdf#dirname" object="?dirname"/>
+      </bindings>
+      <action>
+        <treechildren>
+          <treeitem uri="?node">
+            <treerow>
+              <treecell label="?basename"/>
+              <treecell label="?modified"/>
+              <treecell label="?filesize"/>
+              <treecell label="?packsize"/>
+              <treecell label="?checksum"/>
+              <treecell label="?attribute"/>
+              <treecell label="?dirname"/>
+            </treerow>
+          </treeitem>
+        </treechildren>
+      </action>
+    </rule>
+  </template-->
+</tree>
+
+<statusbar class="chromeclass-status">
+  <statusbarpanel id="avSelectStatus" width="250"/>
+  <statusbarpanel id="avTotalStatus" width="250"/>
+  <statusbarpanel id="avErrorStatus" flex="1"/>
+  <statusbarpanel id="avProgressStatus" width="200">
+    <progressmeter id="avProgress" mode="undetermined" flex="1"/>
+  </statusbarpanel>
+</statusbar>
+
+</window>

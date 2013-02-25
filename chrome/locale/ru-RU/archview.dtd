@@ -1,0 +1,67 @@
+<!ENTITY about.title "Об ArchView">
+<!ENTITY about.license.label "Лицензия">
+<!ENTITY about.credit.label "Авторы">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - Просмотр архивов online!">
+<!ENTITY about.details.label "&about.name.label; показывает содержание архивов online без скачивания всего архива. Список файлов выглядит, как обычная веб страница. Быстрая скорость &about.name.label; достигается за счёт скачивания с сервера только маленькой части архива. &about.name.label; поддерживает форматы RAR и ZIP; протоколы http://, ftp:// и file://; вывод через XUL или HTML интерфейс.">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "Файл">
+<!ENTITY file.open.label "Открыть">
+<!ENTITY file.save.label "Сохранить">
+<!ENTITY file.comment.label "Комментарий">
+<!ENTITY file.list.label "Экспорт Список">
+<!ENTITY file.down.label "Сохранить архив">
+<!ENTITY select.label "Выбрать">
+<!ENTITY select.all.label "Все">
+<!ENTITY select.none.label "Нет">
+<!ENTITY select.invert.label "Инвертировать">
+<!ENTITY select.bytype.label "По типу">
+<!ENTITY view.label "Вид">
+<!ENTITY view.flat.label "Список">
+<!ENTITY view.folder.label "Директория">
+<!ENTITY view.tree.label "Дерево">
+<!ENTITY view.explorer.label "Проводник">
+<!ENTITY sort.label "Сортировка">
+<!ENTITY sort.byname.label "По имени">
+<!ENTITY sort.bysize.label "По размеру">
+<!ENTITY sort.bydate.label "По дате">
+<!ENTITY sort.bypath.label "По пути">
+<!ENTITY sort.unsorted.label "Без сортировки">
+<!ENTITY settings.label "Настройки">
+<!ENTITY about.label "Справка">
+<!ENTITY home.label "Home">
+<!ENTITY help.label "Помощь">
+<!ENTITY debug.label "Отладка">
+<!ENTITY debug.datasource.label "DataSource">
+<!ENTITY debug.category.label "Категория">
+
+<!ENTITY toolbar.text.label "Только текст">
+<!ENTITY toolbar.icon.label "Только Значки">
+<!ENTITY toolbar.full.label "Значки и текст">
+<!ENTITY toolbar.hori.label "Горизонтальный">
+<!ENTITY toolbar.vert.label "Вертикальный">
+
+<!ENTITY column.basename.label "Имя">
+<!ENTITY column.modified.label "Изменён">
+<!ENTITY column.filesize.label "Размер">
+<!ENTITY column.packsize.label "Упакован">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "Атрибуты">
+<!ENTITY column.dirname.label "Путь">
+
+<!ENTITY expand.label "Развернуть">
+<!ENTITY close.label "Закрыть">
+
+<!ENTITY settings.title "Настройки">
+<!ENTITY settings.formats.label "Форматы">
+<!ENTITY settings.protocols.label "Протоколы">
+<!ENTITY settings.interface.label "Интерфейс">
+<!ENTITY settings.columns.label "Колонки">
+<!ENTITY settings.charset.label "Кодировка">
+<!ENTITY settings.exclude.label "Исключать">

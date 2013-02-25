@@ -1,0 +1,67 @@
+<!ENTITY about.title "关于 ArchView">
+<!ENTITY about.license.label "许可协议">
+<!ENTITY about.credit.label "特别感谢">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - 在线查看压缩文档！">
+<!ENTITY about.details.label "&about.name.label; 能够直接浏览压缩文档而不用下载，就象浏览网页一样。它速度很快，因为它只从服务器传送文件的一小部分。&about.name.label; 支持 RAR，ZIP 和 ISO 格式; http://，ftp:// 和 file:// 协议。 而且还能选择使用 XUL 或 HTML 界面。">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "文件">
+<!ENTITY file.open.label "打开">
+<!ENTITY file.save.label "保存">
+<!ENTITY file.comment.label "注释">
+<!ENTITY file.list.label "导出列表">
+<!ENTITY file.down.label "下载存档">
+<!ENTITY select.label "选择">
+<!ENTITY select.all.label "选择全部">
+<!ENTITY select.none.label "取消选择">
+<!ENTITY select.invert.label "反向选择">
+<!ENTITY select.bytype.label "同类文件">
+<!ENTITY view.label "视图">
+<!ENTITY view.flat.label "平坦">
+<!ENTITY view.folder.label "目录">
+<!ENTITY view.tree.label "树形">
+<!ENTITY view.explorer.label "导航">
+<!ENTITY sort.label "排序">
+<!ENTITY sort.byname.label "名称">
+<!ENTITY sort.bysize.label "大小">
+<!ENTITY sort.bydate.label "修改时间">
+<!ENTITY sort.bypath.label "路径">
+<!ENTITY sort.unsorted.label "未排序">
+<!ENTITY settings.label "设置">
+<!ENTITY about.label "关于">
+<!ENTITY home.label "主页">
+<!ENTITY help.label "帮助">
+<!ENTITY debug.label "调试">
+<!ENTITY debug.datasource.label "DataSource">
+<!ENTITY debug.category.label "Category">
+
+<!ENTITY toolbar.text.label "文字">
+<!ENTITY toolbar.icon.label "图标">
+<!ENTITY toolbar.full.label "图标和文字">
+<!ENTITY toolbar.hori.label "水平">
+<!ENTITY toolbar.vert.label "垂直">
+
+<!ENTITY column.basename.label "名称">
+<!ENTITY column.modified.label "修改时间">
+<!ENTITY column.filesize.label "大小">
+<!ENTITY column.packsize.label "压缩后大小">
+<!ENTITY column.checksum.label "校验码">
+<!ENTITY column.attribute.label "属性">
+<!ENTITY column.dirname.label "路径">
+
+<!ENTITY expand.label "展开">
+<!ENTITY close.label "关闭">
+
+<!ENTITY settings.title "参数设置">
+<!ENTITY settings.formats.label "格式">
+<!ENTITY settings.protocols.label "协议">
+<!ENTITY settings.interface.label "界面">
+<!ENTITY settings.columns.label "栏目">
+<!ENTITY settings.charset.label "字符集">
+<!ENTITY settings.exclude.label "排除类型">

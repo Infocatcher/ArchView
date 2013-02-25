@@ -1,0 +1,67 @@
+<!ENTITY about.title "Über ArchView">
+<!ENTITY about.license.label "Lizenz">
+<!ENTITY about.credit.label "Credit">
+<!ENTITY about.name.label "ArchView">
+<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.author.label "Solar Flare">
+<!ENTITY about.email.label "soflare@gmail.com">
+<!ENTITY about.home.label "http://archview.sourceforge.net/">
+<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.banner.label "&about.name.label; - Archivdateien online ansehen!">
+<!ENTITY about.details.label "Mit &about.name.label; kann man Archivdateien online ansehen, ohne das gesamte Archiv herunterladen zu müssen. Genauso wie eine normale Webseite. Das geht sehr schnell, denn es wird nur ein kleines bisschen der Archivdatei vom Server heruntergeladen. &about.name.label; unterstützt die Formate RAR, ZIP und ISO; http://, ftp:// und file://-Protokolle. Und man kann zwischen einer XUL oder HTML Benutzeroberfläche wählen.">
+
+<!ENTITY main.title "ArchView">
+<!ENTITY file.label "Datei">
+<!ENTITY file.open.label "Öffnen">
+<!ENTITY file.save.label "Speichern">
+<!ENTITY file.comment.label "Kommentar">
+<!ENTITY file.list.label "Liste exportieren">
+<!ENTITY file.down.label "Archiv speichern">
+<!ENTITY select.label "Auswählen">
+<!ENTITY select.all.label "Alle">
+<!ENTITY select.none.label "Keine">
+<!ENTITY select.invert.label "Auswahl umkehren">
+<!ENTITY select.bytype.label "Nach Typ">
+<!ENTITY view.label "Ansicht">
+<!ENTITY view.flat.label "Normale Ansicht">
+<!ENTITY view.folder.label "Ordneransicht">
+<!ENTITY view.tree.label "Baumansicht">
+<!ENTITY view.explorer.label "Explorer">
+<!ENTITY sort.label "Sortieren">
+<!ENTITY sort.byname.label "Nach Name">
+<!ENTITY sort.bysize.label "Nach Größe">
+<!ENTITY sort.bydate.label "Nach Datum">
+<!ENTITY sort.bypath.label "Nach Pfad">
+<!ENTITY sort.unsorted.label "Unsortiert">
+<!ENTITY settings.label "Einstellungen">
+<!ENTITY about.label "Über">
+<!ENTITY home.label "Home">
+<!ENTITY help.label "Hilfe">
+<!ENTITY debug.label "Debug">
+<!ENTITY debug.datasource.label "DataSource">
+<!ENTITY debug.category.label "Kategorie">
+
+<!ENTITY toolbar.text.label "Text">
+<!ENTITY toolbar.icon.label "Icons">
+<!ENTITY toolbar.full.label "Icons und Text">
+<!ENTITY toolbar.hori.label "Horizontal">
+<!ENTITY toolbar.vert.label "Vertikal">
+
+<!ENTITY column.basename.label "Name">
+<!ENTITY column.modified.label "Geändert">
+<!ENTITY column.filesize.label "Größe">
+<!ENTITY column.packsize.label "Gepackt">
+<!ENTITY column.checksum.label "CRC">
+<!ENTITY column.attribute.label "Attribute">
+<!ENTITY column.dirname.label "Pfad">
+
+<!ENTITY expand.label "Erweitern">
+<!ENTITY close.label "Schließen">
+
+<!ENTITY settings.title "Einstellungen">
+<!ENTITY settings.formats.label "Formate">
+<!ENTITY settings.protocols.label "Protokolle">
+<!ENTITY settings.interface.label "Benutzeroberfläche">
+<!ENTITY settings.columns.label "Spalten">
+<!ENTITY settings.charset.label "Zeichenkodierung">
+<!ENTITY settings.exclude.label "Dateiendungen ausschließen">

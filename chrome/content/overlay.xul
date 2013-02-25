@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://archview/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://archview/locale/overlay.dtd">
+<overlay id="archview-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script src="overlay.js"/>
+
+<window id="main-window">
+  <popupset id="avPopupSet">
+    <popup id="avPopupMenu" onpopupshowing="return avOnShowPopup(event.target);">
+      <menuitem id="avXulItem" label="XUL" type="radio" name="interface" value="application/vnd.mozilla.xul+xml" oncommand="avOnSetInterface(event.target);"/>
+      <menuitem id="avHtmlItem" label="HTML" type="radio" name="interface" value="text/html" oncommand="avOnSetInterface(event.target);"/>
+      <menuseparator/>
+      <menuitem id="avIsoItem" label="ISO" type="checkbox" value="iso" oncommand="avOnSetFormat(event.target);"/>
+      <menuitem id="avRarItem" label="RAR" type="checkbox" value="rar" oncommand="avOnSetFormat(event.target);"/>
+      <menuitem id="avZipItem" label="ZIP" type="checkbox" value="zip" oncommand="avOnSetFormat(event.target);"/>
+      <menuseparator/>
+      <menuitem id="avAboutItem" label="&av.about.label;" oncommand="avOnAbout();"/>
+    </popup>
+  </popupset>
+</window>
+<statusbar id="status-bar">
+  <statusbarpanel id="avStatus"  onclick="avOnChangeStatus(event);" context="avPopupMenu">
+    <image tooltiptext="ArchView" id="avStatusImage" width="16" height="16" src="chrome://archview/skin/icons/archview1.ico"/>
+  </statusbarpanel>
+</statusbar>
+
+</overlay>
