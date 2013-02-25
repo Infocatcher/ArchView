@@ -9,6 +9,7 @@
      <em:version>0.7.1</em:version>
      <em:description>View archive file online!</em:description>
      <em:creator>Solar Flare</em:creator>
+     <em:developer>Infocatcher (some fixes for Firefox 4.0+)</em:developer>
      <!-- optional items -->
      <em:contributor>Thinkernel</em:contributor>
      <em:contributor>Alberto E. Kuniyoshi</em:contributor>
@@ -27,7 +28,7 @@
        <Description>
          <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
          <em:minVersion>2.0</em:minVersion>
-         <em:maxVersion>3.0.*</em:maxVersion>
+         <em:maxVersion>22.0a1</em:maxVersion>
        </Description>
      </em:targetApplication>
  
