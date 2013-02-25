@@ -1,5 +1,8 @@
 ChangeLog:
 
+0.7.2pre (2013-02-25)
+    Fix: Doesn't work on Firefox 4 and higher.
+
 0.7.1
     New: Translate to German.
     New: Translate to Dutch.
