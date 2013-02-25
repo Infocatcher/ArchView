@@ -3277,13 +3277,13 @@ var archviewModule=
     getClassObject: function(aCompMgr, aCID, aIID)
     {
         var factory;
-	if (aCID.equals(AV_ISOSNIFF_CID))
+        if (aCID.equals(AV_ISOSNIFF_CID))
             factory=archviewISOFactory;
         else if (aCID.equals(AV_ISO_CID))
             factory=archviewISOFactory;
         else if (aCID.equals(AV_ISOCONV_CID))
             factory=archviewISOConvFactory;
-	else if (aCID.equals(AV_RARSNIFF_CID))
+        else if (aCID.equals(AV_RARSNIFF_CID))
             factory=archviewRARFactory;
         else if (aCID.equals(AV_RAR_CID))
             factory=archviewRARFactory;
@@ -3373,5 +3373,5 @@ function NSGetModule(aCompMgr, aFileSpec)
 // Gecko 2.0+
 function NSGetFactory(aCID)
 {
-	return archviewModule.getClassObject(null, aCID, null);
+    return archviewModule.getClassObject(null, aCID, null);
 }
