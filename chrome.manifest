@@ -11,3 +11,61 @@ locale  archview zh-CN       jar:chrome/archview.jar!/locale/zh-CN/
 
 overlay chrome://browser/content/browser.xul chrome://archview/content/overlay.xul
 #style chrome://global/content/customizeToolbar.xul chrome://archview/skin/overlay.css
+
+# Gecko 2.0+
+interfaces components/archview.xpt
+
+component {AE73B6C2-4D58-4007-AB64-7FCF8E13AEE8} components/archview.js
+contract @archview.ffe/archview-info;1 {AE73B6C2-4D58-4007-AB64-7FCF8E13AEE8}
+
+component {BB0BC810-1508-4981-8AB2-2CD42F163E9F} components/archview.js
+contract @archview.ffe/archview-entry;1 {BB0BC810-1508-4981-8AB2-2CD42F163E9F}
+
+component {B19B81B9-62CE-450F-B10E-1533C64700CD} components/archview.js
+contract @archview.ffe/archview-interface;1?type=text/html {B19B81B9-62CE-450F-B10E-1533C64700CD}
+
+component {929A330B-ACC5-4C12-9BB0-1C035A2CE247} components/archview.js
+contract @archview.ffe/archview-interface;1?type=application/vnd.mozilla.xul+xml {929A330B-ACC5-4C12-9BB0-1C035A2CE247}
+
+component {E848F7FD-7A85-4743-82DF-96360D0541A8} components/archview.js
+contract @mozilla.org/rdf/datasource;1?name=archview {E848F7FD-7A85-4743-82DF-96360D0541A8}
+
+component {5AD2325B-4FD4-4C8A-BB56-CDE13DEF2C11} components/archview.js
+contract @archview.ffe/archview-factory;1 {5AD2325B-4FD4-4C8A-BB56-CDE13DEF2C11}
+category Gecko-Content-Viewers m-archview-factory @archview.ffe/archview-factory;1
+
+component {4DA4DB41-189A-457D-935A-497D537F4528} components/archview.js
+contract @archview.ffe/archview-sniffer;1?type=application/iso {4DA4DB41-189A-457D-935A-497D537F4528}
+category net-content-sniffers m-archview-sniffer-iso @archview.ffe/archview-sniffer;1?type=application/iso
+
+component {EB8CB478-E431-4F36-BA50-FEFEEFFF6EBC} components/archview.js
+contract @archview.ffe/archview-lister;1?type=application/iso {EB8CB478-E431-4F36-BA50-FEFEEFFF6EBC}
+
+component {FF6705AA-6593-4B58-8A6C-BFFE51A133B9} components/archview.js
+contract @mozilla.org/streamconv;1?from=application/iso-archview&to=*/* {FF6705AA-6593-4B58-8A6C-BFFE51A133B9}
+
+component {CF7E3858-D5A1-4013-B1ED-07A27D1C2B14} components/archview.js
+contract @archview.ffe/archview-sniffer;1?type=application/rar {CF7E3858-D5A1-4013-B1ED-07A27D1C2B14}
+category net-content-sniffers m-archview-sniffer-rar @archview.ffe/archview-sniffer;1?type=application/rar
+
+component {9D8DD01D-827B-46B3-9DDC-039BEE23FF65} components/archview.js
+contract @archview.ffe/archview-lister;1?type=application/rar {9D8DD01D-827B-46B3-9DDC-039BEE23FF65}
+
+component {EC17E4EC-C142-45E1-A460-7FDDC9586F40} components/archview.js
+contract @mozilla.org/streamconv;1?from=application/rar-archview&to=*/* {EC17E4EC-C142-45E1-A460-7FDDC9586F40}
+
+component {1B5289EE-719E-4099-A9F4-3852AFBBC926} components/archview.js
+contract @archview.ffe/archview-sniffer;1?type=application/zip {1B5289EE-719E-4099-A9F4-3852AFBBC926}
+category net-content-sniffers m-archview-sniffer-zip @archview.ffe/archview-sniffer;1?type=application/zip
+
+component {2E8B3A32-1A53-4F2F-A865-9A1F0E132A8E} components/archview.js
+contract @archview.ffe/archview-lister;1?type=application/zip {2E8B3A32-1A53-4F2F-A865-9A1F0E132A8E}
+
+component {CA3CADA4-BCCD-48C3-A44E-93EDCA2C6723} components/archview.js
+contract @mozilla.org/streamconv;1?from=application/zip-archview&to=*/* {CA3CADA4-BCCD-48C3-A44E-93EDCA2C6723}
+
+component {A884F50D-5256-4A57-B535-A27F71D4F153} components/archview.js
+contract @archview.ffe/archview-channel;1?scheme=http {A884F50D-5256-4A57-B535-A27F71D4F153}
+contract @archview.ffe/archview-channel;1?scheme=https {A884F50D-5256-4A57-B535-A27F71D4F153}
+contract @archview.ffe/archview-channel;1?scheme=ftp {A884F50D-5256-4A57-B535-A27F71D4F153}
+contract @archview.ffe/archview-channel;1?scheme=file {A884F50D-5256-4A57-B535-A27F71D4F153}
