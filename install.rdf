@@ -6,7 +6,7 @@
    
      <em:id>{0AC54906-5413-4C81-B446-07929BC39C25}</em:id>
      <em:name>ArchView</em:name>
-     <em:version>0.7.1</em:version>
+     <em:version>0.7.2pre</em:version>
      <em:description>View archive file online!</em:description>
      <em:creator>Solar Flare</em:creator>
      <em:developer>Infocatcher (some fixes for Firefox 4.0+)</em:developer>
