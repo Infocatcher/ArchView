@@ -147,7 +147,7 @@ function onDown()
             createInstance(CI.nsIURI);
         refer.spec=info.referer;
     }
-    saveURL(info.location, null, null, true, false, refer);
+    saveURL(info.location, null, null, true, false, refer, document);
 }
 
 // Export list
