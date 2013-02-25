@@ -2524,7 +2524,13 @@ ArchviewDLF.prototype=
         // check mimetype
         var res=NS_RDFSRV.GetResource("urn:mimetypes:root");
         var root=CC["@mozilla.org/rdf/container;1"].createInstance(CI.nsIRDFContainer);
-        root.Init(this.typeds, res);
+        try {
+            root.Init(this.typeds, res);
+        }
+        catch(e) { // Fails sometimes and I don't know, how fix this...
+            Components.utils.reportError(e);
+            return;
+        }
         res=NS_RDFSRV.GetResource("urn:mimetype:"+type);
         if (root.IndexOf(res)>=0) return;
 
