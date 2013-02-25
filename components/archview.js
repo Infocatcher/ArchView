@@ -3278,7 +3278,9 @@ var archviewModule=
             factory=archviewChannelFactory;
         else
             throw CR.NS_ERROR_FACTORY_NOT_REGISTERED;
-        return factory.QueryInterface(aIID);
+        if (aIID)
+            return factory.QueryInterface(aIID);
+        return factory;
     },
     registerSelf: function(aCompMgr, aFileSpec, aLocation, aType)
     {
@@ -3333,4 +3335,10 @@ var archviewModule=
 function NSGetModule(aCompMgr, aFileSpec)
 {
     return archviewModule;
+}
+
+// Gecko 2.0+
+function NSGetFactory(aCID)
+{
+	return archviewModule.getClassObject(null, aCID, null);
 }
