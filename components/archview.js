@@ -1849,7 +1849,19 @@ ArchviewDS.prototype=
     },
     addArchive: function(uri, info)
     {
-        var root=NS_RDFSRV.GetResource(uri);
+        try
+        {
+            var root=NS_RDFSRV.GetResource(uri);
+        }
+        catch(e)
+        {
+            Components.utils.reportError(
+                "[ArchView]: NS_RDFSRV.GetResource() failed, uri: "
+                + uri + " (" + typeof uri + ")"
+            );
+            Components.utils.reportError(e);
+            return;
+        }
 
         var tag=info.location.lastIndexOf("/")+1;
         tag=info.location.slice(tag);
