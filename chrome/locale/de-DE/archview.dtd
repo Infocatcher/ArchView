@@ -2,11 +2,15 @@
 <!ENTITY about.license.label "Lizenz">
 <!ENTITY about.credit.label "Credit">
 <!ENTITY about.name.label "ArchView">
-<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.version.label "0.7.2pre">
 <!ENTITY about.author.label "Solar Flare">
 <!ENTITY about.email.label "soflare@gmail.com">
 <!ENTITY about.home.label "http://archview.sourceforge.net/">
-<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.copyright.label "© 2007-2008 &about.author.label;">
+<!ENTITY about.developer.label "Infocatcher">
+<!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
+<!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
+<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - Archivdateien online ansehen!">
 <!ENTITY about.details.label "Mit &about.name.label; kann man Archivdateien online ansehen, ohne das gesamte Archiv herunterladen zu müssen. Genauso wie eine normale Webseite. Das geht sehr schnell, denn es wird nur ein kleines bisschen der Archivdatei vom Server heruntergeladen. &about.name.label; unterstützt die Formate RAR, ZIP und ISO; http://, ftp:// und file://-Protokolle. Und man kann zwischen einer XUL oder HTML Benutzeroberfläche wählen.">
 

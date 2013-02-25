@@ -2,8 +2,8 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
 
 <!DOCTYPE window [
-	<!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
-	%archviewDTD;
+    <!ENTITY % archviewDTD SYSTEM "chrome://archview/locale/archview.dtd">
+    %archviewDTD;
 ]>
 
 <dialog id="avAboutDialog"
@@ -72,11 +72,25 @@ function gohome(url)
         <spacer height="15"/>
         <textbox multiline="true" readonly="true" class="plain" value="&about.details.label;" flex="1"/>
         <spacer height="15"/>
-        <description value="&about.copyright.label;"/>
-        <hbox>
-          <description value="&about.email.label;" style="cursor: pointer; color: blue;" onclick="mailto('&about.email.label;');"/>
-          <spacer flex="1"/>
-        </hbox>
+        <grid>
+            <columns>
+                <column />
+                <column />
+            </columns>
+            <rows>
+                <row>
+                    <description value="&about.copyright.label;"/>
+                    <description value="&about.email.label;" style="cursor: pointer; color: blue;"
+                        onclick="mailto('&about.email.label;');"/>
+                </row>
+                <row>
+                    <description value="&about.copyright2.label;"/>
+                    <description value="&about.url2.label;" style="cursor: pointer; color: blue;"
+                        tooltiptext="&about.url2;"
+                        onclick="gohome(this.getAttribute('tooltiptext'));"/>
+                </row>
+            </rows>
+        </grid>
         <spacer height="8"/>
       </vbox>
     </tabpanel>

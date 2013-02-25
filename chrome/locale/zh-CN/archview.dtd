@@ -2,11 +2,15 @@
 <!ENTITY about.license.label "许可协议">
 <!ENTITY about.credit.label "特别感谢">
 <!ENTITY about.name.label "ArchView">
-<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.version.label "0.7.2pre">
 <!ENTITY about.author.label "Solar Flare">
 <!ENTITY about.email.label "soflare@gmail.com">
 <!ENTITY about.home.label "http://archview.sourceforge.net/">
-<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.copyright.label "© 2007-2008 &about.author.label;">
+<!ENTITY about.developer.label "Infocatcher">
+<!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
+<!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
+<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - 在线查看压缩文档！">
 <!ENTITY about.details.label "&about.name.label; 能够直接浏览压缩文档而不用下载，就象浏览网页一样。它速度很快，因为它只从服务器传送文件的一小部分。&about.name.label; 支持 RAR，ZIP 和 ISO 格式; http://，ftp:// 和 file:// 协议。 而且还能选择使用 XUL 或 HTML 界面。">
 

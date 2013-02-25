@@ -2,11 +2,15 @@
 <!ENTITY about.license.label "Licentie">
 <!ENTITY about.credit.label "Credit">
 <!ENTITY about.name.label "ArchView">
-<!ENTITY about.version.label "0.7.1">
+<!ENTITY about.version.label "0.7.2pre">
 <!ENTITY about.author.label "Solar Flare">
 <!ENTITY about.email.label "soflare@gmail.com">
 <!ENTITY about.home.label "http://archview.sourceforge.net/">
-<!ENTITY about.copyright.label "(c) 2007-2008 &about.author.label;">
+<!ENTITY about.copyright.label "© 2007-2008 &about.author.label;">
+<!ENTITY about.developer.label "Infocatcher">
+<!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
+<!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
+<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - Bekijk Archieven Online!">
 <!ENTITY about.details.label "&about.name.label; kan archief bestanden open zonder het daadwerkelijk te downloaden, zoals een normale webpagina. Het is razendsnel omdat het maar een klein deeltje van de server moet verkrijgen. &about.name.label; ondersteunt het RAR, ZIP en ISO type; http://, ftp:// en file:// protocollen. En het kan weergeven in XUL of HTML interface.">
 
