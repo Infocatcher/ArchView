@@ -1,12 +1,12 @@
 content archview             chrome/content/
 skin    archview classic/1.0 chrome/skin/
 locale  archview en-US       chrome/locale/en-US/
-locale  archview de-DE       chrome/locale/de-DE/
+locale  archview de          chrome/locale/de/
 locale  archview es-ES       chrome/locale/es-ES/
-locale  archview ja-JP       chrome/locale/ja-JP/
-locale  archview nl-NL       chrome/locale/nl-NL/
+locale  archview ja          chrome/locale/ja/
+locale  archview nl          chrome/locale/nl/
 locale  archview pt-BR       chrome/locale/pt-BR/
-locale  archview ru-RU       chrome/locale/ru-RU/
+locale  archview ru          chrome/locale/ru/
 locale  archview zh-CN       chrome/locale/zh-CN/
 
 overlay chrome://browser/content/browser.xul chrome://archview/content/overlay.xul
