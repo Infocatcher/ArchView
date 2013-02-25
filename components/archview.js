@@ -1529,8 +1529,7 @@ ArchviewHTML.prototype=
     onStartRequest: function(request, context)
     {
         var info=context.QueryInterface(CI.avIArchviewInfo);
-        this.uri=new RegExp(":\/\/[^@]*@"); // trim the user:pass pair
-        this.uri=info.location.replace(this.uri, "://");
+        this.uri=info.location.replace(/:\/\/[^@]*@/, "://"); // trim the user:pass pair
 
         var charset = "UTF-8";
         if (!this.conv) try {
@@ -1666,14 +1665,15 @@ ArchviewXUL.prototype=
         var obssrv=CC[NS_OBSSRV_CTID].getService(CI.nsIObserverService);
         var info=context.QueryInterface(CI.avIArchviewInfo);
         var t="start:"+info.filecount;
-        this.uri=new RegExp(":\/\/[^@]*@"); // trim the user:pass pair
-        this.uri=info.location.replace(this.uri, "://");
+        this.uri=info.location.replace(/:\/\/[^@]*@/, "://"); // trim the user:pass pair
         obssrv.notifyObservers(info, AV_TOPIC, t);
     },
     onStopRequest: function(request, context, status)
     {
         var obssrv=CC[NS_OBSSRV_CTID].getService(CI.nsIObserverService);
         var info=context.QueryInterface(CI.avIArchviewInfo);
+        if (!this.uri)
+            this.uri = info.location;
         var ds=NS_RDFSRV.GetDataSource("rdf:archview");
         var t="end:"+status;
         ds=ds.QueryInterface(CI.avIArchviewSource);
