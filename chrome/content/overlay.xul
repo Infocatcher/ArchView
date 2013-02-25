@@ -8,7 +8,7 @@
 
 <window id="main-window">
   <popupset id="avPopupSet">
-    <popup id="avPopupMenu" onpopupshowing="return avOnShowPopup(event.target);">
+    <menupopup id="avPopupMenu" onpopupshowing="return avOnShowPopup(event.target);">
       <menuitem id="avXulItem" label="XUL" type="radio" name="interface" value="application/vnd.mozilla.xul+xml" oncommand="avOnSetInterface(event.target);"/>
       <menuitem id="avHtmlItem" label="HTML" type="radio" name="interface" value="text/html" oncommand="avOnSetInterface(event.target);"/>
       <menuseparator/>
@@ -17,7 +17,7 @@
       <menuitem id="avZipItem" label="ZIP" type="checkbox" value="zip" oncommand="avOnSetFormat(event.target);"/>
       <menuseparator/>
       <menuitem id="avAboutItem" label="&av.about.label;" oncommand="avOnAbout();"/>
-    </popup>
+    </menupopup>
   </popupset>
 </window>
 <statusbar id="status-bar">

@@ -73,7 +73,7 @@
   </toolbarbutton>
 </toolbar>
 
-<popup id="avToolbarPopup">
+<menupopup id="avToolbarPopup">
     <menuitem id="avToolbarTextItem" label="&toolbar.text.label;" type="radio" name="mode" oncommand="onToolbarChange('text');"/>
     <menuitem id="avToolbarIconItem" label="&toolbar.icon.label;" type="radio" name="mode" oncommand="onToolbarChange('icon');"/>
     <menuitem id="avToolbarFullItem" label="&toolbar.full.label;" type="radio" name="mode" oncommand="onToolbarChange('full');"/>
@@ -83,13 +83,13 @@
     <!--menuseparator/>
     <menuitem id="avToolbarLargeItem" label="&toolbar.large.label;" type="radio" name="size" oncommand="onToolbarChange(event);"/>
     <menuitem id="avToolbarSmallItem" label="&toolbar.small.label;" type="radio" name="size" oncommand="onToolbarChange(event);"/-->
-</popup>
+</menupopup>
 
-<popup id="avTreePopup" onpopupshowing="return onShowTreePopup(event);">
+<menupopup id="avTreePopup" onpopupshowing="return onShowTreePopup(event);">
     <menuitem id="avTreeOpenItem" label="&file.open.label;" oncommand="onOpen(false);"/>
     <menuitem id="avTreeSaveItem" label="&file.save.label;" oncommand="onOpen(true);"/>
     <menuitem id="avTreeExpandItem" label="&expand.label;" oncommand="onExpand();"/>
-</popup>
+</menupopup>
 
 <tree id="avContentTree" enableColumnDrag="true" contextmenu="avTreePopup" datasources="rdf:null" ref="" flags="dont-build-content" flex="1" ondblclick="onTreeDblClick(event);" onkeypress="onTreeKeyPress(event);" onselect="onTreeSelect();">
   <treecols onclick="onTreeColClick(event);">
