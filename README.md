@@ -4,7 +4,7 @@ This is a fork of <a href="https://addons.mozilla.org/firefox/addon/archview/">A
 <br>Feel free to fork it!
 
 #### Usage:
-Just run make.bat (7-Zip required) or pack all files into ZIP-archive:
+Just run <a href="make.bat">make.bat</a> (<a href="http://7-zip.org/">7-Zip</a> required) or pack all files into ZIP-archive:
 ```
 archview.xpi (ZIP-archive with .xpi extension)
 ├─ chrome/
