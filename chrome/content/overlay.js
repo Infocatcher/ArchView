@@ -17,6 +17,8 @@ function avOnLoad()
     var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch2);
     prefsrv.addObserver(AV_PREF_ENABLED, avStatusObserver, false);
     avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
+    if (document.getElementById("addon-bar"))
+        document.getElementById("avStatusImage").hidden=true;
 }
 
 function avOnUnload()
