@@ -655,7 +655,12 @@ ArchviewRAR.prototype=
                         i+=RAR_FILE_HEAD_SIZE;
                         this.entry.filename=this.buffer.slice(i, i+this.namesize);
                         this.entry.filename=this.entry.filename.replace(this.regex, "/");
-                        this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
+                        try {
+                            this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
+                        }
+                        catch(e) {
+                            Components.utils.reportError(e);
+                        }
                         //this.entry.comment=this.buffer.slice(i+this.namesize, i+this.headsize); // fixme:
                         //this.entry.comment=this.conv.ConvertToUnicode(this.entry.comment);
                         this.info.filecount++;
@@ -913,7 +918,12 @@ ArchviewZIP.prototype=
                     i+=ZIP_CREC_SIZE;
 
                     this.entry.filename=this.buffer.slice(i, i+this.namesize);
-                    this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
+                    try {
+                        this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
+                    }
+                    catch(e) {
+                        Components.utils.reportError(e);
+                    }
                     i+=this.namesize;
                     this.entry.extra=this.buffer.slice(i, i+this.extrasize);
                     i+=this.extrasize;
