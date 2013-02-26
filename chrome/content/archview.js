@@ -443,6 +443,24 @@ function onOpen(save)
     }
 }
 
+function onMouseOver(event)
+{
+    var btn=event.target;
+    if (btn.open || btn.type!="menu")
+        return;
+    var toolbar=event.currentTarget;
+    var btns=toolbar.getElementsByTagName("toolbarbutton");
+    for (var i=0, l=btns.length; i<l; ++i)
+    {
+        var b=btns[i];
+        if (b!=btn && b.type=="menu" && b.open)
+        {
+            b.open=false;
+            btn.open=true;
+            break;
+        }
+    }
+}
 
 /////////////////////////////////////////////////////
 //

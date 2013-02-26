@@ -22,7 +22,7 @@
   <stringbundle id="avString" src="chrome://archview/locale/archview.properties"/>
 </stringbundleset>
 
-<toolbar id="avToolBar" contextmenu="avToolbarPopup">
+<toolbar id="avToolBar" contextmenu="avToolbarPopup" onmouseover="onMouseOver(event)">
   <toolbarbutton id="avFileBtn" label="&file.label;" text="&file.label;" image="chrome://archview/skin/icons/file.ico" type="menu">
     <menupopup>
       <menuitem id="avOpenItem" label="&file.open.label;" oncommand="onOpen(false);"/>
