@@ -91,7 +91,8 @@
     <menuitem id="avTreeExpandItem" label="&expand.label;" oncommand="onExpand();"/>
 </menupopup>
 
-<tree id="avContentTree" enableColumnDrag="true" contextmenu="avTreePopup" datasources="rdf:null" ref="" flags="dont-build-content" flex="1" ondblclick="onTreeDblClick(event);" onkeypress="onTreeKeyPress(event);" onselect="onTreeSelect();">
+<tree id="avContentTree" enableColumnDrag="true" contextmenu="avTreePopup" datasources="rdf:null" ref="" flags="dont-build-content" flex="1"
+  onmousedown="onTreeMouseDown(event);" onclick="onTreeClick(event);" ondblclick="onTreeDblClick(event);" onkeypress="onTreeKeyPress(event);" onselect="onTreeSelect();">
   <treecols onclick="onTreeColClick(event);">
     <treecol id="avBasenameCol" label="&column.basename.label;" flex="2" sort="rdf:@archview.ffe/rdf#basename" persist="width ordinal" primary="true"/>
     <splitter class="tree-splitter"/>

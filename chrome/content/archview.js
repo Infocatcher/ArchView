@@ -34,6 +34,7 @@ var avDebug=false;
 var avViewMode="";
 var avTree;
 var avStrings;
+var avMouseDownRow;
 
 var observer=
 {
@@ -381,14 +382,21 @@ function onTreeKeyPress(event)
     }
 }
 
+function onTreeMouseDown(event)
+{
+    avMouseDownRow=avTree.treeBoxObject.getRowAt(event.clientX, event.clientY);
+}
+
+function onTreeClick(event)
+{
+    if (event.button==1)
+        avOpenFromEvent(event);
+}
+
 function onTreeDblClick(event)
 {
-    var row=avTree.treeBoxObject.getRowAt(event.clientX, event.clientY);
-    if (row>=0)
-    {
-        if (avViewMode!="tree" || !avTree.view.isContainer(row))
-            avOpen(row, false);
-    }
+    if (event.button==0)
+        avOpenFromEvent(event);
 }
 
 function onToolbarChange(mode)
@@ -491,6 +499,16 @@ function avForeach(action, context)
         for (var j=min.value; j<=max.value; j++)
             if (action(j, context))
                 selection.getRangeAt(i, min, max);
+    }
+}
+
+function avOpenFromEvent(event)
+{
+    var row=avTree.treeBoxObject.getRowAt(event.clientX, event.clientY);
+    if (row>=0 && row==avMouseDownRow)
+    {
+        if (avViewMode!="tree" || !avTree.view.isContainer(row))
+            avOpen(row, false);
     }
 }
 
