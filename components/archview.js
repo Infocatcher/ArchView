@@ -1,6 +1,7 @@
 const CC=Components.classes;
 const CI=Components.interfaces;
 const CR=Components.results;
+const CU=Components.utils;
 
 const MIME_XUL="application/vnd.mozilla.xul+xml";
 const MIME_HTML="text/html";
@@ -171,8 +172,7 @@ const AV_KEY_FILECOUNT=NS_RDFSRV.GetResource("@archview.ffe/rdf#filecount");
 const AV_KEY_SIZECOUNT=NS_RDFSRV.GetResource("@archview.ffe/rdf#sizecount");
 const AV_KEY_ERRORCODE=NS_RDFSRV.GetResource("@archview.ffe/rdf#errorcode");
 
-var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-    .getService(Components.interfaces.nsIXULAppInfo);
+var appInfo = CC["@mozilla.org/xre/app-info;1"].getService(CI.nsIXULAppInfo);
 var fixCharset = parseFloat(appInfo.platformVersion) >= 2;
 
 
@@ -659,7 +659,7 @@ ArchviewRAR.prototype=
                             this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
                         }
                         catch(e) {
-                            Components.utils.reportError(e);
+                            CU.reportError(e);
                         }
                         //this.entry.comment=this.buffer.slice(i+this.namesize, i+this.headsize); // fixme:
                         //this.entry.comment=this.conv.ConvertToUnicode(this.entry.comment);
@@ -922,7 +922,7 @@ ArchviewZIP.prototype=
                         this.entry.filename=this.conv.ConvertToUnicode(this.entry.filename);
                     }
                     catch(e) {
-                        Components.utils.reportError(e);
+                        CU.reportError(e);
                     }
                     i+=this.namesize;
                     this.entry.extra=this.buffer.slice(i, i+this.extrasize);
@@ -1547,7 +1547,7 @@ ArchviewHTML.prototype=
             charset = pref.getCharPref(AV_PREF_CHARSET);
         }
         catch(e) {
-            Components.utils.reportError(e);
+            CU.reportError(e);
         }
         var buf="<html>\n<head>\n"+
             "<title>"+this.uri+"</title>\n"+
@@ -1887,11 +1887,11 @@ ArchviewDS.prototype=
         }
         catch(e)
         {
-            Components.utils.reportError(
+            CU.reportError(
                 "[ArchView]: NS_RDFSRV.GetResource() failed, uri: "
                 + uri + " (" + typeof uri + ")"
             );
-            Components.utils.reportError(e);
+            CU.reportError(e);
             return;
         }
 
@@ -2539,7 +2539,7 @@ ArchviewDLF.prototype=
             root.Init(this.typeds, res);
         }
         catch(e) { // Fails sometimes and I don't know, how fix this...
-            Components.utils.reportError(e);
+            CU.reportError(e);
             return;
         }
         res=NS_RDFSRV.GetResource("urn:mimetype:"+type);
