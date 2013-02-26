@@ -1583,15 +1583,11 @@ ArchviewHTML.prototype=
 
         if (this.conv)
             buf=this.conv.ConvertFromUnicode(buf)+this.conv.Finish();
-        else if(fixCharset) try {
-            var conv = CC["@mozilla.org/intl/scriptableunicodeconverter"].
-                createInstance(CI.nsIScriptableUnicodeConverter);
-            var pref = CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch);
-            conv.charset = pref.getCharPref(AV_PREF_CHARSET);
-            buf = conv.ConvertFromUnicode(buf) + conv.Finish();
-        }
-        catch(e) {
-            Components.utils.reportError(e);
+        else if (fixCharset)
+        {
+            buf = buf.replace(/[\x7f-\uffff]/g, function(s) {
+                return "&#" + s.charCodeAt(0) + ";";
+            });
         }
         this.output.write(buf, buf.length);
     },
