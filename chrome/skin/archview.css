@@ -28,3 +28,7 @@ treechildren::-moz-tree-image(folder) {
 treechildren::-moz-tree-image(folder,encrypted) {
     list-style-image: url("icons/folder1.ico");
 }
+
+#avProgress[mode="determined"][value="0"] {
+    visibility: hidden;
+}
