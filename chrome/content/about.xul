@@ -18,17 +18,6 @@
 const CC=Components.classes;
 const CI=Components.interfaces;
 
-function mailto(email)
-{
-    var srv=CC["@mozilla.org/uriloader/external-protocol-service;1"].
-                getService(CI.nsIExternalProtocolService);
-    if (!srv.externalProtocolHandlerExists("mailto")) return false;
-
-    var addr=CC["@mozilla.org/network/simple-uri;1"].createInstance(CI.nsIURI);
-    addr.spec="mailto:"+email;
-    srv.loadUrl(addr);
-    return true;
-}
 function gohome(url)
 {
     var watcher=CC["@mozilla.org/embedcomp/window-watcher;1"].getService(CI.nsIWindowWatcher);
@@ -73,23 +62,22 @@ function gohome(url)
         <textbox multiline="true" readonly="true" class="plain" value="&about.details.label;" flex="1"/>
         <spacer height="15"/>
         <grid>
-            <columns>
-                <column />
-                <column />
-            </columns>
-            <rows>
-                <row>
-                    <description value="&about.copyright.label;"/>
-                    <description value="&about.email.label;" style="cursor: pointer; color: blue;"
-                        onclick="mailto('&about.email.label;');"/>
-                </row>
-                <row>
-                    <description value="&about.copyright2.label;"/>
-                    <description value="&about.url2.label;" style="cursor: pointer; color: blue;"
-                        tooltiptext="&about.url2;"
-                        onclick="gohome(this.getAttribute('tooltiptext'));"/>
-                </row>
-            </rows>
+          <columns>
+            <column />
+            <column />
+          </columns>
+          <rows>
+            <row>
+              <description value="&about.copyright.label;"/>
+              <label class="text-link" value="&about.email.label;"
+                href="mailto:&about.email.label;" tooltiptext="mailto:&about.email.label;"/>
+            </row>
+            <row>
+              <description value="&about.copyright2.label;"/>
+              <label class="text-link" value="&about.url2.label;"
+                href="&about.url2;" tooltiptext="&about.url2;"/>
+            </row>
+          </rows>
         </grid>
         <spacer height="8"/>
       </vbox>
