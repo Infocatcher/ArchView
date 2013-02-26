@@ -29,6 +29,11 @@ function avOnUnload()
 
 function avOnChangeStatus(event)
 {
+    if (event.button==1)
+    {
+        avOnSettings();
+        return;
+    }
     if (event.button) return;
 
     var img=document.getElementById("avStatusImage");
