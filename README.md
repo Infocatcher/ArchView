@@ -2,3 +2,13 @@ This is a fork of <a href="https://addons.mozilla.org/firefox/addon/archview/">A
 <br>Updated for Firefox 4 and higher.
 <br>But for now I don't have plans (and time) to support extension, sorry. I just tried to fix it and some features seems works for me, so I released this updated version.
 <br>Feel free to fork it!
+
+#### Usage:
+Just run make.bat (7-Zip required) or pack all files into ZIP-archive:
+```
+archview.xpi (ZIP-archive with .xpi extension)
+├─ chrome/
+...
+├─ chrome.manifest
+└─ install.rdf
+```
