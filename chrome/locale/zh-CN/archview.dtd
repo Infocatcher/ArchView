@@ -2,7 +2,6 @@
 <!ENTITY about.license.label "许可协议">
 <!ENTITY about.credit.label "特别感谢">
 <!ENTITY about.name.label "ArchView">
-<!ENTITY about.version.label "0.7.2pre">
 <!ENTITY about.author.label "Solar Flare">
 <!ENTITY about.email.label "soflare@gmail.com">
 <!ENTITY about.home.label "http://archview.sourceforge.net/">

@@ -63,7 +63,7 @@ function gohome(url)
           <spacer width="15"/>
           <vbox flex="1">
             <spacer flex="1"/>
-            <description value="&about.name.label; &about.version.label;" style="font-weight: bold;"/>
+            <description value="&about.name.label; 0.7.2pre2" style="font-weight: bold;"/>
             <spacer flex="1"/>
           </vbox>
         </hbox>
