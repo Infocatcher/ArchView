@@ -90,6 +90,15 @@ function avSetStatusImage(enabled)
     var imgsrc="chrome://archview/skin/icons/archview"+(enabled-0)+".ico";
     var img=document.getElementById("avStatusImage");
     if (img) img.src=imgsrc;
+    var tb=document.getElementById("avToolbar");
+    if (!tb)
+    {
+        var toolbox = "gNavToolbox" in window && gNavToolbox
+            || "getNavToolbox" in window && getNavToolbox() // Firefox 3.0
+            || document.getElementById("navigator-toolbox"); // Firefox <= 2.0
+        tb = "palette" in toolbox && toolbox.palette.getElementsByAttribute("id", "avToolbar")[0];
+    }
+    if (tb) tb.image=imgsrc;
 }
 
 /* We use the observer the change the image. So not need to change other windows' image.

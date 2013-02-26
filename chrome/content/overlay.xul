@@ -25,5 +25,11 @@
     <image tooltiptext="ArchView" id="avStatusImage" width="16" height="16" src="chrome://archview/skin/icons/archview1.ico"/>
   </statusbarpanel>
 </statusbar>
+<toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="avToolbar" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="ArchView" tooltiptext="ArchView"
+    image="chrome://archview/skin/icons/archview1.ico"
+    onclick="avOnChangeStatus(event);" context="avPopupMenu"/>
+</toolbarpalette>
 
 </overlay>
