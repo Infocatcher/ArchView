@@ -19,6 +19,11 @@ function avOnLoad()
     prefsrv.addObserver(AV_PREF, avStatusObserver, false);
     avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
     avSetStatusbar(prefsrv.getBoolPref(AV_PREF_STATUSBAR));
+    if (document.getElementById("addon-bar"))
+    {
+        var defaultPrefs=prefsrv.getDefaultBranch("");
+        defaultPrefs.setBoolPref(AV_PREF_STATUSBAR, false);
+    }
 }
 
 function avOnUnload()
