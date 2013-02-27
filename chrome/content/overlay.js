@@ -8,6 +8,7 @@ const AV_DLF_CTID="@archview.ffe/archview-factory;1";
 
 const AV_PREF="extensions.archview.";
 const AV_PREF_ENABLED=AV_PREF+"enabled";
+const AV_PREF_STATUSBAR=AV_PREF+"statusbar";
 const AV_PREF_INTERFACE=AV_PREF+"interface";
 const AV_PREF_PROTOCOL=AV_PREF+"protocol.";
 const AV_PREF_FORMAT=AV_PREF+"format.";
@@ -15,16 +16,15 @@ const AV_PREF_FORMAT=AV_PREF+"format.";
 function avOnLoad()
 {
     var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch2);
-    prefsrv.addObserver(AV_PREF_ENABLED, avStatusObserver, false);
+    prefsrv.addObserver(AV_PREF, avStatusObserver, false);
     avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
-    if (document.getElementById("addon-bar"))
-        document.getElementById("avStatus").hidden=true;
+    avSetStatusbar(prefsrv.getBoolPref(AV_PREF_STATUSBAR));
 }
 
 function avOnUnload()
 {
     var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch2);
-    prefsrv.removeObserver(AV_PREF_ENABLED, avStatusObserver);
+    prefsrv.removeObserver(AV_PREF, avStatusObserver);
 }
 
 function avOnChangeStatus(event)
@@ -108,6 +108,12 @@ function avSetStatusImage(enabled)
     if (tb) tb.image=imgsrc;
 }
 
+function avSetStatusbar(show)
+{
+    var statusbar=document.getElementById("avStatus");
+    if (statusbar) statusbar.hidden=!show;
+}
+
 /* We use the observer the change the image. So not need to change other windows' image.
 function avSetStatusImage(enabled)
 {
@@ -141,8 +147,11 @@ var avStatusObserver=
     {
         if (topic!=AV_NS_PREFCHANGE_TOPIC) return;
         branch=branch.QueryInterface(AV_CI.nsIPrefBranch);
-        if (branch.root+suffix==AV_PREF_ENABLED)
+        var pref=branch.root+suffix;
+        if (pref==AV_PREF_ENABLED)
             avSetStatusImage(branch.getBoolPref(suffix));
+        else if (pref==AV_PREF_STATUSBAR)
+            avSetStatusbar(branch.getBoolPref(suffix));
     }
 }
 

@@ -1,4 +1,5 @@
 pref("extensions.archview.enabled", true);
+pref("extensions.archview.statusbar", true);
 pref("extensions.archview.toolbar", "-full");
 pref("extensions.archview.interface", "application/vnd.mozilla.xul+xml");
 pref("extensions.archview.view", "tree");
