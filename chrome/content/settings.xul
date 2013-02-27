@@ -33,6 +33,7 @@
     <preference id="dirname" name="extensions.archview.column.dirname" type="bool"/>
     <preference id="charset" name="extensions.archview.charset" type="string"/>
     <preference id="exclude" name="extensions.archview.exclude" type="string"/>
+    <preference id="statusbar" name="extensions.archview.statusbar" type="bool"/>
   </preferences>
 
 <hbox>
@@ -101,6 +102,8 @@
       </template>
     </menulist>
 </groupbox>
+
+<checkbox label="Show icon in the Status Bar" preference="statusbar"/>
 
 </vbox>
 </hbox>
