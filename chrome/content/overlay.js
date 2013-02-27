@@ -18,7 +18,7 @@ function avOnLoad()
     prefsrv.addObserver(AV_PREF_ENABLED, avStatusObserver, false);
     avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
     if (document.getElementById("addon-bar"))
-        document.getElementById("avStatusImage").hidden=true;
+        document.getElementById("avStatus").hidden=true;
 }
 
 function avOnUnload()
