@@ -18,7 +18,7 @@
 <!ENTITY file.open.label "Открыть">
 <!ENTITY file.save.label "Сохранить">
 <!ENTITY file.comment.label "Комментарий">
-<!ENTITY file.list.label "Экспорт Список">
+<!ENTITY file.list.label "Экспортировать список">
 <!ENTITY file.down.label "Сохранить архив">
 <!ENTITY select.label "Выбрать">
 <!ENTITY select.all.label "Все">
@@ -45,7 +45,7 @@
 <!ENTITY debug.category.label "Категория">
 
 <!ENTITY toolbar.text.label "Только текст">
-<!ENTITY toolbar.icon.label "Только Значки">
+<!ENTITY toolbar.icon.label "Только значки">
 <!ENTITY toolbar.full.label "Значки и текст">
 <!ENTITY toolbar.hori.label "Горизонтальный">
 <!ENTITY toolbar.vert.label "Вертикальный">
