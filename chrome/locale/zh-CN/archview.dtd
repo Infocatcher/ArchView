@@ -68,3 +68,4 @@
 <!ENTITY settings.columns.label "栏目">
 <!ENTITY settings.charset.label "字符集">
 <!ENTITY settings.exclude.label "排除类型">
+<!ENTITY settings.statusbar.label "Show icon in the Status Bar">

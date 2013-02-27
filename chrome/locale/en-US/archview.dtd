@@ -68,3 +68,4 @@
 <!ENTITY settings.columns.label "Columns">
 <!ENTITY settings.charset.label "Charset">
 <!ENTITY settings.exclude.label "Exclude">
+<!ENTITY settings.statusbar.label "Show icon in the Status Bar">

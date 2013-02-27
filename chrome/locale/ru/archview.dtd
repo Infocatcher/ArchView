@@ -68,3 +68,4 @@
 <!ENTITY settings.columns.label "Колонки">
 <!ENTITY settings.charset.label "Кодировка">
 <!ENTITY settings.exclude.label "Исключать">
+<!ENTITY settings.statusbar.label "Показывать иконку в строке состояния">

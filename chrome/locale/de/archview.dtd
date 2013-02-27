@@ -68,3 +68,4 @@
 <!ENTITY settings.columns.label "Spalten">
 <!ENTITY settings.charset.label "Zeichenkodierung">
 <!ENTITY settings.exclude.label "Dateiendungen ausschließen">
+<!ENTITY settings.statusbar.label "Show icon in the Status Bar">

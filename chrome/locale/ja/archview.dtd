@@ -68,3 +68,4 @@
 <!ENTITY settings.columns.label "列">
 <!ENTITY settings.charset.label "エンコーディング">
 <!ENTITY settings.exclude.label "除外">
+<!ENTITY settings.statusbar.label "Show icon in the Status Bar">

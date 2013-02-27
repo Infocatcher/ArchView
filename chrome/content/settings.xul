@@ -103,7 +103,7 @@
     </menulist>
 </groupbox>
 
-<checkbox label="Show icon in the Status Bar" preference="statusbar"/>
+<checkbox label="&settings.statusbar.label;" preference="statusbar"/>
 
 </vbox>
 </hbox>
