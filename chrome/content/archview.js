@@ -6,7 +6,8 @@ const NS_OBSSRV_CTID="@mozilla.org/observer-service;1";
 const NS_PREFSRV_CTID="@mozilla.org/preferences-service;1";
 const NS_PROMSRV_CTID="@mozilla.org/embedcomp/prompt-service;1";
 const NS_RDFSRV_CTID="@mozilla.org/rdf/rdf-service;1";
-const NS_PREFSRV=CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch2);
+const NS_PREFSRV=CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch);
+if ("nsIPrefBranch2" in CI) NS_PREFSRV.QueryInterface(CI.nsIPrefBranch2);
 const NS_RDFSRV=CC[NS_RDFSRV_CTID].getService(CI.nsIRDFService);
 const NS_PREFCHANGE_TOPIC="nsPref:changed";
 

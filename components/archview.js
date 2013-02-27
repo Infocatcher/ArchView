@@ -2488,7 +2488,8 @@ ArchviewDLF.prototype=
     },
     init: function()
     {
-        var prefsrv=CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch2);
+        var prefsrv=CC[NS_PREFSRV_CTID].getService(CI.nsIPrefBranch);
+        if ("nsIPrefBranch2" in CI) prefsrv.QueryInterface(CI.nsIPrefBranch2);
 
         if (prefsrv.getPrefType(AV_PREF_CHARSET)!=prefsrv.PREF_STRING ||
             !prefsrv.getCharPref(AV_PREF_CHARSET))
