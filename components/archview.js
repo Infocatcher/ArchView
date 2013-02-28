@@ -2539,7 +2539,7 @@ ArchviewDLF.prototype=
         try {
             root.Init(this.typeds, res);
         }
-        catch(e) { // Fails sometimes and I don't know, how fix this...
+        catch(e) { // Fails sometimes... Only if urn:mimetypes:root not yet created?
             CU.reportError(e);
             return;
         }
