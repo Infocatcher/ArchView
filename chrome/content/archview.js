@@ -455,7 +455,7 @@ function onOpen(save)
 function onMouseOver(event)
 {
     var btn=event.target;
-    if (btn.open || btn.type!="menu")
+    if (btn.localName!="toolbarbutton" || btn.open || btn.type!="menu")
         return;
     var toolbar=event.currentTarget;
     var btns=toolbar.getElementsByTagName("toolbarbutton");
@@ -469,6 +469,15 @@ function onMouseOver(event)
             break;
         }
     }
+}
+
+function onKeyPress(event)
+{
+    var btn=event.target;
+    if (btn.localName!="toolbarbutton" || btn.type!="menu")
+        return;
+    if (event.keyCode==event.DOM_VK_RETURN)
+        btn.open=!btn.open;
 }
 
 /////////////////////////////////////////////////////
