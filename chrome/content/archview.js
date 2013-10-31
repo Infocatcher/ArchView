@@ -681,7 +681,7 @@ function avSetToolbar(mode)
             nodes[i].setAttribute("orient", "horizonal");
         else if (orient=="|")
             nodes[i].setAttribute("orient", "vertical");
-        if (nodes[i].type=="menu")
+        if ("type" in nodes[i] && nodes[i].type=="menu")
         {   // toolbarbutton of menu type needs special refreshing
             nodes[i].focus();
             nodes[i].firstChild.hidePopup();
