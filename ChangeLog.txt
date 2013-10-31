@@ -1,5 +1,19 @@
 ChangeLog:
 
+0.7.2 (2013-10-31)
+    Fix: Correctly hide button in Status Bar.
+    New: Option to hide button in the Status Bar.
+    New: Ability to open menu buttons from keyboard (XUL mode).
+
+0.7.2pre2 (2013-02-26)
+    Fix: Charset in HTML view (workaround).
+    Fix: Can't initialize in some cases (workaround).
+    New: Show file name in window title (XUL mode).
+    New: Toolbar button.
+    New: Open menu buttons on mouseover (XUL mode).
+    New: Support for SeaMonkey.
+    New: Middle-click on button to open settings.
+
 0.7.2pre (2013-02-25)
     Fix: Doesn't work on Firefox 4 and higher.
 
