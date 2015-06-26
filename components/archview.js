@@ -780,11 +780,11 @@ ArchviewRAR.prototype=
     }
 };
 
-const ZIP_CREC_HEAD="PK\01\02";
+const ZIP_CREC_HEAD="PK\x01\x02";
 const ZIP_CREC_SIZE=46;
-const ZIP_LREC_HEAD="PK\03\04";
+const ZIP_LREC_HEAD="PK\x03\x04";
 const ZIP_LREC_SIZE=30;
-const ZIP_ECREC_HEAD="PK\05\06";
+const ZIP_ECREC_HEAD="PK\x05\x06";
 const ZIP_ECREC_SIZE=22;
 
 function ArchviewZIP()
@@ -1219,7 +1219,7 @@ ArchviewRARConv.prototype=
                 this.filehead+=bin.readBytes(this.headsize);
                 this.headsize=this.filehead.length;
                 // check if this file is in subdirectory
-                var namesize=this.filehead.indexOf("\00", RAR_FILE_HEAD_SIZE)-RAR_FILE_HEAD_SIZE;
+                var namesize=this.filehead.indexOf("\x00", RAR_FILE_HEAD_SIZE)-RAR_FILE_HEAD_SIZE;
                 if (!(this.headflag&0x0200) || namesize<1 || namesize>=this.namesize)
                     namesize=this.namesize;    // no unicode part
                 var t=this.filehead.lastIndexOf("\\", RAR_FILE_HEAD_SIZE+namesize);
