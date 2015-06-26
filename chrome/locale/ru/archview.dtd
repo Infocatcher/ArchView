@@ -9,7 +9,7 @@
 <!ENTITY about.developer.label "Infocatcher">
 <!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
 <!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
-<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
+<!ENTITY about.copyright2.label "© 2013, 2015 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - Просмотр архивов online!">
 <!ENTITY about.details.label "&about.name.label; показывает содержание архивов online без скачивания всего архива. Список файлов выглядит, как обычная веб страница. Быстрая скорость &about.name.label; достигается за счёт скачивания с сервера только маленькой части архива. &about.name.label; поддерживает форматы RAR и ZIP; протоколы http://, ftp:// и file://; вывод через XUL или HTML интерфейс.">
 

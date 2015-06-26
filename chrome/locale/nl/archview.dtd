@@ -9,7 +9,7 @@
 <!ENTITY about.developer.label "Infocatcher">
 <!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
 <!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
-<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
+<!ENTITY about.copyright2.label "© 2013, 2015 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - Bekijk Archieven Online!">
 <!ENTITY about.details.label "&about.name.label; kan archief bestanden open zonder het daadwerkelijk te downloaden, zoals een normale webpagina. Het is razendsnel omdat het maar een klein deeltje van de server moet verkrijgen. &about.name.label; ondersteunt het RAR, ZIP en ISO type; http://, ftp:// en file:// protocollen. En het kan weergeven in XUL of HTML interface.">
 

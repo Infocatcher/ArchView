@@ -9,7 +9,7 @@
 <!ENTITY about.developer.label "Infocatcher">
 <!ENTITY about.url2.label "github.com/Infocatcher/ArchView">
 <!ENTITY about.url2 "https://github.com/Infocatcher/ArchView">
-<!ENTITY about.copyright2.label "© 2013 &about.developer.label;">
+<!ENTITY about.copyright2.label "© 2013, 2015 &about.developer.label;">
 <!ENTITY about.banner.label "&about.name.label; - Firefoxで直接アーカイブファイルの中身を見える！">
 <!ENTITY about.details.label "&about.name.label; でアーカイブファイルのダウンロードが要らなく、ウエッブページの見る方法と同じでfirefoxでアーカイブファイルの中身を見える。Webサーバより必要な情報だけを取得するので、速度が速い。&about.name.label; はRARとZIPとISO形式のアーカイブファイルをサポートし、http://とftp://とfile://の三つプロトコルをサポートしている。そして、XULとHTMLの二つ画面表示形式を選択できる。">
 
