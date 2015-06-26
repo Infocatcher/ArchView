@@ -94,7 +94,9 @@
 
 <groupbox>
   <caption label="&settings.charset.label;"/>
-    <menulist id="avCharsetlist" ref="NC:DecodersRoot" datasources="rdf:charset-menu" preference="charset" flex="1" onsyncfrompreference="return readDefaultCharset();">
+    <menulist id="avCharsetlist" ref="NC:DecodersRoot" datasources="rdf:charset-menu" preference="charset" flex="1"
+      onsyncfrompreference="this.setAttribute('onsyncfrompreference', ''); readDefaultCharset(this.firstChild);">
+      <menupopup/>
       <template>
         <menupopup>
           <menuitem label="rdf:http://home.netscape.com/NC-rdf#Name" uri="..." value="..."/>
