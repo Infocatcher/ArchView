@@ -111,7 +111,7 @@ function avSetStatusImage(enabled)
             || document.getElementById("navigator-toolbox"); // Firefox <= 2.0
         tb = "palette" in toolbox && toolbox.palette.getElementsByAttribute("id", "avToolbar")[0];
     }
-    if (tb) tb.image=imgsrc;
+    if (tb) tb.setAttribute("image", imgsrc); // Note: tb.image=... doesn't work for just added button
 }
 
 function avSetStatusbar(show)
