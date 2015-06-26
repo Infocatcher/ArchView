@@ -16,6 +16,7 @@
       <menuitem id="avRarItem" label="RAR" type="checkbox" value="rar" oncommand="avOnSetFormat(event.target);"/>
       <menuitem id="avZipItem" label="ZIP" type="checkbox" value="zip" oncommand="avOnSetFormat(event.target);"/>
       <menuseparator/>
+      <menuitem id="avSettingsItem" label="&av.settings.label;" oncommand="avOnSettings();"/>
       <menuitem id="avAboutItem" label="&av.about.label;" oncommand="avOnAbout();"/>
     </menupopup>
   </popupset>
