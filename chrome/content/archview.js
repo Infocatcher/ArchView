@@ -193,7 +193,7 @@ function onList(selected)
             context.filecount++;
             context.sizecount+=avTree.view.getCellText(row, context.szcol)-0;
         };
-        var context=new Object();
+        var context={};
         context.gen=gen;
         context.bncol=avTree.columns.getNamedColumn("avBasenameCol");
         context.dncol=avTree.columns.getNamedColumn("avDirnameCol");
@@ -234,8 +234,8 @@ function onSelect(mode)
             break;
         case "invert":
             //select.invertSelection();
-            var min=new Object();
-            var max=new Object();
+            var min={};
+            var max={};
             for (var i=0, t=0; i<select.getRangeCount(); i++)
             {
                 select.getRangeAt(i, min, max);
@@ -342,7 +342,7 @@ function onHelp()
 
 function onTreeSelect()
 {
-    var size=new Object();
+    var size={};
     var action=function(row, size)
     {
         size.value+=avTree.view.getCellText(row, size.col)-0;
@@ -446,8 +446,8 @@ function onOpen(save)
     avForeach(avOpen, save);
     if (sel.currentIndex<0)
     {
-        var t=new Object();
-        sel.getRangeAt(0, t, new Object());
+        var t={};
+        sel.getRangeAt(0, t, {});
         sel.currentIndex=t.value;
     }
 }
@@ -501,8 +501,8 @@ function avShow(info)
 function avForeach(action, context)
 {
     var selection=avTree.view.selection;
-    var min=new Object();
-    var max=new Object();
+    var min={};
+    var max={};
     for (var i=0; i<selection.getRangeCount(); i++)
     {
         selection.getRangeAt(i, min, max);
@@ -623,7 +623,7 @@ function avSetColumn(name, flag)
         return;
     }
 
-    var columns=NS_PREFSRV.getChildList(AV_PREF_COLUMN, new Object());
+    var columns=NS_PREFSRV.getChildList(AV_PREF_COLUMN, {});
     for (var i=0; i<columns.length; i++)
     {
         name=columns[i].slice(AV_PREF_COLUMN.length);

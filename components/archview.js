@@ -224,7 +224,7 @@ CRC32.prototype=
     {
         if (poly) this.polynomial=poly;
  
-        this.crctable=new Array();
+        this.crctable=[];
         for (var i=0; i<256; i++)
         {
             var c=i;
@@ -290,7 +290,7 @@ ArchviewISO.prototype=
                 this.output.onStartRequest(request, this.info);
                 break;
             case 2:
-                this.pathtbl=new Array();
+                this.pathtbl=[];
                 this.last=this.sect+1;
                 this.offset=0;
                 this.info.filecount=0;
@@ -2172,7 +2172,7 @@ ArchviewDS.prototype=
             }
         }
 
-        var save=new Array();
+        var save=[];
         var files=this.memds.ArcLabelsOut(root);
         while(files.hasMoreElements())
         {
@@ -2222,7 +2222,7 @@ ArchviewDS.prototype=
             this.removeContainer(root);
 
         var t;
-        var save=new Array();
+        var save=[];
         var files=this.memds.ArcLabelsOut(root);
         while(files.hasMoreElements())
         {
@@ -2249,7 +2249,7 @@ ArchviewDS.prototype=
             this.removeContainer(root);
 
         var t;
-        var save=new Array();
+        var save=[];
         var files=this.memds.ArcLabelsOut(root);
         while(files.hasMoreElements())
         {
@@ -2459,7 +2459,7 @@ ArchviewDLF.prototype=
         }
         else if (key==AV_PREF_ENABLED)
         {
-            var child=prefsrv.getChildList(AV_PREF_FORMAT, new Object());
+            var child=prefsrv.getChildList(AV_PREF_FORMAT, {});
             for (var i=0; i<child.length; i++)
                 if (prefsrv.getBoolPref(child[i]))
                     this.registerFormat(child[i], key);
@@ -2511,7 +2511,7 @@ ArchviewDLF.prototype=
         this.observe(prefsrv, NS_PREFCHANGE_TOPIC, AV_PREF_INTERFACE);
         this.observe(prefsrv, NS_PREFCHANGE_TOPIC, AV_PREF_ENABLED);
 
-        var child=prefsrv.getChildList(AV_PREF_PROTOCOL, new Object());
+        var child=prefsrv.getChildList(AV_PREF_PROTOCOL, {});
         for (var i=0; i<child.length; i++)
             this.observe(prefsrv, NS_PREFCHANGE_TOPIC, child[i]);
 
