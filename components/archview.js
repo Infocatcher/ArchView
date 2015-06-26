@@ -2494,12 +2494,16 @@ ArchviewDLF.prototype=
         if (prefsrv.getPrefType(AV_PREF_CHARSET)!=prefsrv.PREF_STRING ||
             !prefsrv.getCharPref(AV_PREF_CHARSET))
         {
-            // set default charset
-            var strbsrv=CC[NS_STRBSRV_CTID].getService(CI.nsIStringBundleService);
-            //var strb=strbsrv.createBundle("chrome://global/locale/intl.properties");
-            var strb=strbsrv.createBundle("chrome://global-platform/locale/intl.properties");
-            var charset=strb.GetStringFromName("intl.charset.default");
-            prefsrv.setCharPref(AV_PREF_CHARSET, charset);
+            try {
+                // set default charset
+                var strbsrv=CC[NS_STRBSRV_CTID].getService(CI.nsIStringBundleService);
+                //var strb=strbsrv.createBundle("chrome://global/locale/intl.properties");
+                var strb=strbsrv.createBundle("chrome://global-platform/locale/intl.properties");
+                var charset=strb.GetStringFromName("intl.charset.default");
+                prefsrv.setCharPref(AV_PREF_CHARSET, charset);
+            }
+            catch(e) { // Missing in Firefox 28+
+            }
         }
 
         this.addMimeType("zip", MIME_ZIP, "ZIP Archive", true);
