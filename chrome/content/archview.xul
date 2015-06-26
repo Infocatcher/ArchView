@@ -52,7 +52,7 @@
     </menupopup>
   </toolbarbutton>
   <toolbarbutton id="avSortBtn" label="&sort.label;" text="&sort.label;" image="chrome://archview/skin/icons/sort.ico" type="menu">
-    <menupopup>
+    <menupopup onpopupshowing="onSortMenuShowing(this);">
       <menuitem id="avByBasenameItem" label="&sort.byname.label;" type="radio" oncommand="onSort(event);"/>
       <menuitem id="avByFilesizeItem" label="&sort.bysize.label;" type="radio" oncommand="onSort(event);"/>
       <menuitem id="avByModifiedItem" label="&sort.bydate.label;" type="radio" oncommand="onSort(event);"/>

@@ -292,6 +292,26 @@ function onView(mode)
     avSetView(mode);
 }
 
+function onSortMenuShowing(menu)
+{
+    Array.forEach(
+        menu.getElementsByTagName("menuitem"),
+        function(mi) {
+            mi.removeAttribute("checked");
+        }
+    );
+    var sortId;
+    var sortCol=avTree.columns.getSortedColumn();
+    sortCol=sortCol && sortCol.element;
+    if (!sortCol || sortCol.getAttribute("sortDirection")=="natural")
+        sortId="avUnsortItem";
+    else
+        sortId="avBy"+sortCol.id.replace(/^av|Col$/g, "")+"Item";
+    var sortItem=sortId && document.getElementById(sortId);
+    if (sortItem && sortItem.parentNode==menu)
+        sortItem.setAttribute("checked", "true");
+}
+
 function onSort(event)
 {
     var id=event.target.id;
