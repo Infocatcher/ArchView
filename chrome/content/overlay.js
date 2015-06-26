@@ -15,8 +15,9 @@ const AV_PREF_FORMAT=AV_PREF+"format.";
 
 function avOnLoad()
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-    if ("nsIPrefBranch2" in AV_CI) prefsrv.QueryInterface(AV_CI.nsIPrefBranch2);
+    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID]
+        .getService(AV_CI.nsIPrefService)
+        .QueryInterface(AV_CI.nsIPrefBranch2 || AV_CI.nsIPrefBranch);
     prefsrv.addObserver(AV_PREF, avStatusObserver, false);
     avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
     avSetStatusbar(prefsrv.getBoolPref(AV_PREF_STATUSBAR));
