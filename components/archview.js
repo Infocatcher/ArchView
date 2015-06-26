@@ -2905,7 +2905,7 @@ var archviewISOFactory=
         if (!iid.equals(CI.nsISupports) &&
             !iid.equals(CI.nsIFactory) &&
             !iid.equals(CI.nsIContentSniffer) &&
-            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             throw CR.NS_ERROR_NO_INTERFACE;
         return this;
     },
@@ -2914,7 +2914,7 @@ var archviewISOFactory=
         if (outer != null)
             throw CR.NS_ERROR_NO_AGGREGATION;
         if (iid.equals(CI.nsIContentSniffer) ||
-            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             return this;
         var comp = new ArchviewISO();
         return comp.QueryInterface(iid);
@@ -2953,7 +2953,7 @@ var archviewRARFactory=
         if (!iid.equals(CI.nsISupports) &&
             !iid.equals(CI.nsIFactory) &&
             !iid.equals(CI.nsIContentSniffer) &&
-            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             throw CR.NS_ERROR_NO_INTERFACE;
         return this;
     },
@@ -2962,7 +2962,7 @@ var archviewRARFactory=
         if (outer != null)
             throw CR.NS_ERROR_NO_AGGREGATION;
         if (iid.equals(CI.nsIContentSniffer) ||
-            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             return this;
         var comp = new ArchviewRAR();
         return comp.QueryInterface(iid);
@@ -3006,7 +3006,7 @@ var archviewZIPFactory=
         if (!iid.equals(CI.nsISupports) &&
             !iid.equals(CI.nsIFactory) &&
             !iid.equals(CI.nsIContentSniffer) &&
-            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            !iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             throw CR.NS_ERROR_NO_INTERFACE;
         return this;
     },
@@ -3015,7 +3015,7 @@ var archviewZIPFactory=
         if (outer != null)
             throw CR.NS_ERROR_NO_AGGREGATION;
         if (iid.equals(CI.nsIContentSniffer) ||
-            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH))
+            iid.equals(CI.nsIContentSniffer_MOZILLA_1_8_BRANCH || CI.nsIContentSniffer))
             return this;
         var comp = new ArchviewZIP();
         return comp.QueryInterface(iid);
