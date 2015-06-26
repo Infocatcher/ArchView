@@ -123,7 +123,15 @@ function onLoad()
         observer.observe(info, AV_TOPIC, "end:");
     }
 
-    var file = /[^\/]*$/.test(document.location) && RegExp.lastMatch || document.location;
+    var file = document.location;
+    if (/[^\/]+$/.test(file))
+    {
+        file = RegExp.lastMatch;
+        if (file.indexOf("%") != -1) try {
+            file = decodeURIComponent(file);
+        }
+        catch(e) {}
+    }
     document.title = file + " - " + document.title;
 }
 
