@@ -712,6 +712,7 @@ function avSetToolbar(mode)
         if ("type" in nodes[i] && nodes[i].type=="menu")
         {   // toolbarbutton of menu type needs special refreshing
             nodes[i].focus();
+            nodes[i].open=true;
             nodes[i].firstChild.hidePopup();
         }
     }
