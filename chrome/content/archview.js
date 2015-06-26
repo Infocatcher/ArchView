@@ -146,6 +146,8 @@ function onUnload()
 
     var ds=AV_RDFDS.QueryInterface(CI.avIArchviewSource);
     ds.removeArchive(document.location);
+
+    avSaveColumn();
 }
 
 // Download the whole archive file.
@@ -661,6 +663,18 @@ function avSetColumn(name, flag)
         if (node && node.hidden==flag)
             node.hidden=!flag;
     }
+}
+
+function avSaveColumn()
+{
+    Array.forEach(
+        avTree.columns,
+        function(col) {
+            var node=col.element;
+            var pref=node.id.replace(/^av|Col$/g, "").toLowerCase();
+            NS_PREFSRV.setBoolPref(AV_PREF_COLUMN+pref, !node.hidden);
+        }
+    );
 }
 
 function avSetToolbar(mode)
