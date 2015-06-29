@@ -2,6 +2,7 @@ var AV_CC=Components.classes;
 var AV_CI=Components.interfaces;
 var AV_CR=Components.results;
 
+var AV_NS_PREFSRV;
 const AV_NS_PREFCHANGE_TOPIC="nsPref:changed";
 const AV_NS_PREFSRV_CTID="@mozilla.org/preferences-service;1";
 const AV_DLF_CTID="@archview.ffe/archview-factory;1";
@@ -15,23 +16,22 @@ const AV_PREF_FORMAT=AV_PREF+"format.";
 
 function avOnLoad()
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID]
+    AV_NS_PREFSRV=AV_CC[AV_NS_PREFSRV_CTID]
         .getService(AV_CI.nsIPrefService)
         .QueryInterface(AV_CI.nsIPrefBranch2 || AV_CI.nsIPrefBranch);
-    prefsrv.addObserver(AV_PREF, avStatusObserver, false);
-    avSetStatusImage(prefsrv.getBoolPref(AV_PREF_ENABLED));
-    avSetStatusbar(prefsrv.getBoolPref(AV_PREF_STATUSBAR));
+    AV_NS_PREFSRV.addObserver(AV_PREF, avStatusObserver, false);
+    avSetStatusImage(AV_NS_PREFSRV.getBoolPref(AV_PREF_ENABLED));
+    avSetStatusbar(AV_NS_PREFSRV.getBoolPref(AV_PREF_STATUSBAR));
     if (document.getElementById("addon-bar"))
     {
-        var defaultPrefs=prefsrv.getDefaultBranch("");
+        var defaultPrefs=AV_NS_PREFSRV.getDefaultBranch("");
         defaultPrefs.setBoolPref(AV_PREF_STATUSBAR, false);
     }
 }
 
 function avOnUnload()
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-    prefsrv.removeObserver(AV_PREF, avStatusObserver);
+    AV_NS_PREFSRV.removeObserver(AV_PREF, avStatusObserver);
 }
 
 function avOnChangeStatus(event)
@@ -46,8 +46,7 @@ function avOnChangeStatus(event)
     var img=document.getElementById("avStatusImage");
     var enabled=img.src[img.src.length-5]==0;
 
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-    prefsrv.setBoolPref(AV_PREF_ENABLED, enabled);
+    AV_NS_PREFSRV.setBoolPref(AV_PREF_ENABLED, enabled);
 }
 
 function avOnSettings()
@@ -64,19 +63,17 @@ function avOnAbout()
 
 function avOnShowPopup(menu)
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-
     var items=menu.childNodes;
     for (var i=0; i<items.length; i++)
     {
         var t=items.item(i).getAttribute("name");
         var v=items.item(i).value;
         if (t=="interface")
-            t=(prefsrv.getCharPref(AV_PREF_INTERFACE)==v);
-        else if (prefsrv.getPrefType(AV_PREF_FORMAT+v)==prefsrv.PREF_BOOL)
-            t=prefsrv.getBoolPref(AV_PREF_FORMAT+v);
-/*      else if (prefsrv.getPrefType(AV_PREF_PROTOCOL+v)==prefsrv.PREF_BOOL)
-            t=prefsrv.getBoolPref(AV_PREF_FORMAT+v); */
+            t=(AV_NS_PREFSRV.getCharPref(AV_PREF_INTERFACE)==v);
+        else if (AV_NS_PREFSRV.getPrefType(AV_PREF_FORMAT+v)==AV_NS_PREFSRV.PREF_BOOL)
+            t=AV_NS_PREFSRV.getBoolPref(AV_PREF_FORMAT+v);
+/*      else if (AV_NS_PREFSRV.getPrefType(AV_PREF_PROTOCOL+v)==AV_NS_PREFSRV.PREF_BOOL)
+            t=AV_NS_PREFSRV.getBoolPref(AV_PREF_FORMAT+v); */
         else
             continue;
         items.item(i).setAttribute("checked", t?"true":"false");
@@ -85,18 +82,16 @@ function avOnShowPopup(menu)
 
 function avOnSetFormat(item)
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
     var key=AV_PREF_FORMAT+item.value;
-    if (prefsrv.getPrefType(key)!=prefsrv.PREF_BOOL)
+    if (AV_NS_PREFSRV.getPrefType(key)!=AV_NS_PREFSRV.PREF_BOOL)
         return;
     var val=item.getAttribute("checked");
-    prefsrv.setBoolPref(key, (val=="true")?true:false);
+    AV_NS_PREFSRV.setBoolPref(key, (val=="true")?true:false);
 }
 
 function avOnSetInterface(item)
 {
-    var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-    prefsrv.setCharPref(AV_PREF_INTERFACE, item.value);
+    AV_NS_PREFSRV.setCharPref(AV_PREF_INTERFACE, item.value);
 }
 
 function avSetStatusImage(enabled)
@@ -126,8 +121,7 @@ function avSetStatusImage(enabled)
 {
     if (typeof(enabled)=="undefined")
     {
-        var prefsrv=AV_CC[AV_NS_PREFSRV_CTID].getService(AV_CI.nsIPrefBranch);
-        enabled=prefsrv.getBoolPref(AV_PREF_ENABLED);
+        enabled=AV_NS_PREFSRV.getBoolPref(AV_PREF_ENABLED);
     }
     var imgsrc="chrome://archview/skin/icons/archview"+(enabled-0)+".ico";
 
