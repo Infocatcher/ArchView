@@ -185,7 +185,7 @@ function convertDosDateTime(time)
     t.setHours((time&0x0000F800)>>11);
     t.setMinutes((time&0x000007E0)>>5, time&0x0000001F);
     return t.getTime();
-};
+}
 function convertPattern(str)
 {
     // canonicalize glob
@@ -200,12 +200,12 @@ function convertPattern(str)
     re=re.replace(/;/g, "$|^");
     re=re.replace(/^\$\|(.*)\|\^$/, "$1");
     return new RegExp(re, "i");
-};
+}
 
 function CRC32(poly)
 {
     this.table=this.buildTable(poly);
-};
+}
 CRC32.prototype=
 {
     crctable: null,
@@ -253,7 +253,7 @@ function ArchviewISO()
 {
     this.conv=CC["@mozilla.org/intl/scriptableunicodeconverter"].
         createInstance(CI.nsIScriptableUnicodeConverter);
-};
+}
 ArchviewISO.prototype=
 {
     sect: 0,
@@ -527,7 +527,7 @@ function ArchviewRAR()
     }
     this.fragsize=pref.getIntPref(AV_PREF_FRAGSIZE);
     if (this.fragsize<512) this.fragsize=MTUSIZE;
-};
+}
 ArchviewRAR.prototype=
 {
     headsize: 0,
@@ -800,7 +800,7 @@ function ArchviewZIP()
     this.fragsize=pref.getIntPref(AV_PREF_FRAGSIZE);
     if (this.fragsize<512) this.fragsize=MTUSIZE;
     this.retries=pref.getIntPref(AV_PREF+"zip.retries");
-};
+}
 ArchviewZIP.prototype=
 {
     offset: 0,
@@ -1022,7 +1022,7 @@ ArchviewZIP.prototype=
 
 function ArchviewISOConv()
 {
-};
+}
 ArchviewISOConv.prototype=
 {
     listener: null,
@@ -1091,7 +1091,7 @@ ArchviewISOConv.prototype=
 
 function ArchviewRARConv()
 {
-};
+}
 ArchviewRARConv.prototype=
 {
     stat: 0,
@@ -1279,7 +1279,7 @@ const GZIP_TAIL="\x00\x00\x00\x00\x00\x00\x00\x00";
 
 function ArchviewZIPConv()
 {
-};
+}
 ArchviewZIPConv.prototype=
 {
     stat: 0,
@@ -1422,7 +1422,7 @@ ArchviewZIPConv.prototype=
 
 function ArchviewInfo()
 {
-};
+}
 ArchviewInfo.prototype=
 {
     _location: "",
@@ -1464,7 +1464,7 @@ ArchviewInfo.prototype=
 
 function ArchviewEntry()
 {
-};
+}
 ArchviewEntry.prototype=
 {
     _filename: "",
@@ -1521,7 +1521,7 @@ ArchviewEntry.prototype=
 
 function ArchviewHTML()
 {
-};
+}
 ArchviewHTML.prototype=
 {
     output: null,
@@ -1658,7 +1658,7 @@ ArchviewHTML.prototype=
 
 function ArchviewXUL()
 {
-};
+}
 ArchviewXUL.prototype=
 {
     uri: "",
@@ -1713,7 +1713,7 @@ ArchviewXUL.prototype=
 function ArchviewDSEnum(all)
 {
     this.all=all;
-};
+}
 ArchviewDSEnum.prototype=
 {
     all: null,
@@ -1749,7 +1749,7 @@ ArchviewDSEnum.prototype=
 function ArchviewDS()
 {
     this.init();
-};
+}
 ArchviewDS.prototype=
 {
     memds: null,
@@ -2303,7 +2303,7 @@ ArchviewDS.prototype=
 function ArchviewDLF()
 {
     this.init();
-};
+}
 ArchviewDLF.prototype=
 {
     mode: MIME_XUL,
@@ -2592,7 +2592,7 @@ ArchviewDLF.prototype=
 
 function ArchviewChannel()
 {
-};
+}
 ArchviewChannel.prototype=
 {
     channel: null,
