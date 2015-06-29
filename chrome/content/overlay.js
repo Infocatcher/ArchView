@@ -51,8 +51,12 @@ function avOnChangeStatus(event)
 
 function avOnSettings()
 {
-    window.openDialog("chrome://archview/content/settings.xul",
-            "settings", "chrome,dialog,modal,resizable=no,centerscreen");
+    var features="chrome,titlebar,toolbar,centerscreen,modal";
+    try {
+        if (AV_NS_PREFSRV.getBoolPref("browser.preferences.instantApply"))
+            features=features.replace("modal", "dialog=no");
+    } catch (ex) { }
+    window.openDialog("chrome://archview/content/settings.xul", "settings", features);
 }
 
 function avOnAbout()
